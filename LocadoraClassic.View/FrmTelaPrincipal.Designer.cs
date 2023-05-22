@@ -76,6 +76,7 @@
             // 
             // generoToolStripMenuItem
             // 
+            this.generoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.generoToolStripMenuItem.Name = "generoToolStripMenuItem";
             this.generoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.generoToolStripMenuItem.Text = "Gênero";
@@ -115,14 +116,14 @@
             // realizarLocacaoToolStripMenuItem
             // 
             this.realizarLocacaoToolStripMenuItem.Name = "realizarLocacaoToolStripMenuItem";
-            this.realizarLocacaoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.realizarLocacaoToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.realizarLocacaoToolStripMenuItem.Text = "Realizar Locação";
             this.realizarLocacaoToolStripMenuItem.Click += new System.EventHandler(this.realizarLocacaoToolStripMenuItem_Click);
             // 
             // relatorioDiarioToolStripMenuItem
             // 
             this.relatorioDiarioToolStripMenuItem.Name = "relatorioDiarioToolStripMenuItem";
-            this.relatorioDiarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.relatorioDiarioToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.relatorioDiarioToolStripMenuItem.Text = "Relatório Diário";
             // 
             // relatóriosToolStripMenuItem
@@ -186,6 +187,7 @@
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "fmrMenu";
