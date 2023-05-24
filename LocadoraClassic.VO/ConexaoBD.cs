@@ -8,11 +8,12 @@ namespace LocadoraClassic.VO
 {
     public class ConexaoBD
     {
+
         public string Server { get; set; }
         public string UserID { get; set; }
         public string Password { get; set;}
         public string InitialCatalog { get; set; }
-
+        
         public ConexaoBD()
         {
 

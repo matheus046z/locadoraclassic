@@ -103,3 +103,4 @@ C:\Users\Matheus-Notebook\source\repos\locadoraclassic\locadoraclassic\LocadoraC
 C:\Users\Matheus-Notebook\source\repos\locadoraclassic\locadoraclassic\LocadoraClassic.View\obj\Debug\LocadoraClassic.View.exe
 C:\Users\Matheus-Notebook\source\repos\locadoraclassic\locadoraclassic\LocadoraClassic.View\obj\Debug\LocadoraClassic.View.pdb
 C:\Users\Matheus-Notebook\source\repos\locadoraclassic\locadoraclassic\LocadoraClassic.View\obj\Debug\LocadoraClassic.View.FrmConectarBD.resources
+C:\Users\ALUNO\source\repos\LocadoraClassic\LocadoraClassic.View\obj\Debug\LocadoraClassic.View.FrmConectarBD.resources

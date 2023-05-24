@@ -12,6 +12,8 @@ namespace LocadoraClassic.DAL
 {
     public class Conexao2
     {
+        public object DataSource { get; set; }
+
         private static SqlConnection _sqlcon;
 
         public static SqlConnection Sqlcon
@@ -20,7 +22,7 @@ namespace LocadoraClassic.DAL
             {
                 if (_sqlcon == null)
                 {
-                    _sqlcon = new SqlConnection(@"Initial Catalog=locadoraclassic;User ID=Matheus;Password=zmThe$19-03sql; Server=192.168.0.49");
+                    _sqlcon = new SqlConnection(@"Initial Catalog=locadoraclassic;User ID=Matheus;Password=zmThe$19-03sql; Server=177.235.71.5");
                 }
                 return _sqlcon;
             }

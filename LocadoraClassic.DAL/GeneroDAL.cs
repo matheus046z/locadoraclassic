@@ -40,5 +40,19 @@ namespace LocadoraClassic.DAL
             Conexao.Instance.Close();
             */
         }
+        //public void CarregarGenero()
+        //{
+        //    Conexao2.Sqlcon.Open();
+        //    SqlCommand command;
+        //    SqlDataAdapter adapter = new SqlDataAdapter();
+        //    string sql = "";
+        //    sql = "SELECT * FROM genero";
+
+        //    command = new SqlCommand(sql, Conexao2.Sqlcon);
+        //    adapter.InsertCommand = new SqlCommand(sql, Conexao2.Sqlcon);
+        //    adapter.InsertCommand.ExecuteNonQuery();
+        //    command.Dispose();
+        //    Conexao2.Sqlcon.Close();
+        //}
     }
 }
