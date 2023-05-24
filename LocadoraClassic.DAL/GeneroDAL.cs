@@ -1,17 +1,30 @@
 ﻿using LocadoraClassic.VO;
 using MySql.Data.MySqlClient;
-
+using System.Data.SqlClient;
 
 namespace LocadoraClassic.DAL
 {
     public class GeneroDAL
     {
         //Faz um CRUD ai?
-        //INSER, DELETE, UPDATE, SELECT
+        //INSERT, DELETE, UPDATE, SELECT
 
         // metodo orientado a objeto
         public void IserirGenero(Genero genero) //Classe objeto
         {
+            Conexao2.Sqlcon.Open();
+            SqlCommand command;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            string sql = "";
+            sql = "INSERT INTO genero(nome) VALUES('"+ genero.Nome +"')";
+
+            command = new SqlCommand(sql, Conexao2.Sqlcon);
+            adapter.InsertCommand = new SqlCommand(sql, Conexao2.Sqlcon);
+            adapter.InsertCommand.ExecuteNonQuery();
+            command.Dispose();
+            Conexao2.Sqlcon.Close();
+
+            /*
             //Abrir a conexão
             Conexao.Instance.Open();  // A instancia é da classe, não do objeto
 
@@ -25,6 +38,7 @@ namespace LocadoraClassic.DAL
             comando.Parameters.Add(new MySqlParameter("@nome", genero.Nome));
             comando.ExecuteNonQuery();
             Conexao.Instance.Close();
+            */
         }
     }
 }

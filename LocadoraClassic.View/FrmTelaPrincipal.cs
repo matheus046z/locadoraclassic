@@ -61,5 +61,12 @@ namespace LocadoraClassic.View
             frmTelaLocacao.MdiParent = this;
             frmTelaLocacao.Show();
         }
+
+        private void conectarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConectarBD frmConectarBD = new FrmConectarBD();
+            frmConectarBD.MdiParent = this;
+            frmConectarBD.Show();
+        }
     }
 }
