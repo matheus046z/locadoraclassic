@@ -51,6 +51,13 @@
             // 
             // txtServer
             // 
+            this.txtServer.AllowDrop = true;
+            this.txtServer.AutoCompleteCustomSource.AddRange(new string[] {
+            "192.168.0.49",
+            "177.235.71.5"});
+            this.txtServer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtServer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtServer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtServer.Location = new System.Drawing.Point(62, 49);
             this.txtServer.Name = "txtServer";
             this.txtServer.Size = new System.Drawing.Size(147, 20);
@@ -73,15 +80,18 @@
             this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "User Id";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtUserId
             // 
+            this.txtUserId.AllowDrop = true;
+            this.txtUserId.AutoCompleteCustomSource.AddRange(new string[] {
+            "Matheus"});
+            this.txtUserId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtUserId.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtUserId.Location = new System.Drawing.Point(62, 88);
             this.txtUserId.Name = "txtUserId";
             this.txtUserId.Size = new System.Drawing.Size(144, 20);
             this.txtUserId.TabIndex = 2;
-            this.txtUserId.TextChanged += new System.EventHandler(this.txtUserId_TextChanged);
             // 
             // label2
             // 
@@ -94,6 +104,11 @@
             // 
             // txtInitialCatalog
             // 
+            this.txtInitialCatalog.AllowDrop = true;
+            this.txtInitialCatalog.AutoCompleteCustomSource.AddRange(new string[] {
+            "locadoraclassic"});
+            this.txtInitialCatalog.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtInitialCatalog.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtInitialCatalog.Location = new System.Drawing.Point(62, 166);
             this.txtInitialCatalog.Name = "txtInitialCatalog";
             this.txtInitialCatalog.Size = new System.Drawing.Size(144, 20);
@@ -112,8 +127,10 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(62, 127);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(144, 20);
             this.txtPassword.TabIndex = 3;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // FrmConectarBD
             // 
@@ -129,8 +146,12 @@
             this.Controls.Add(this.Server);
             this.Controls.Add(this.txtServer);
             this.Controls.Add(this.btnConectar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmConectarBD";
-            this.Text = "FrmConectarBD";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Conectar DB";
             this.ResumeLayout(false);
             this.PerformLayout();
 

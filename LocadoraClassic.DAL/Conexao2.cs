@@ -1,28 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
-using System.Data.SqlClient;
-using Org.BouncyCastle.Security;
+﻿using System.Data.SqlClient;
 using LocadoraClassic.VO;
 
 namespace LocadoraClassic.DAL
 {
     public class Conexao2
     {
-        public object DataSource { get; set; }
+        //Singleton
+        //set e get
+        //psquisar quando e porque usar "static"
 
-        private static SqlConnection _sqlcon;
-
-        public static SqlConnection Sqlcon
+        private static SqlConnection _sqlcon; //Variavel de apoio, instancia de conexão
+        public static SqlConnection Sqlcon // variavel de propriedade
         {
             get
             {
                 if (_sqlcon == null)
                 {
-                    _sqlcon = new SqlConnection(@"Initial Catalog=locadoraclassic;User ID=Matheus;Password=zmThe$19-03sql; Server=177.235.71.5");
+                    _sqlcon = new SqlConnection(ConexaoBD.ConnectionStringBD);
                 }
                 return _sqlcon;
             }

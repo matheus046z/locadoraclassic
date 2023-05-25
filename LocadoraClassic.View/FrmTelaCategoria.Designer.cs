@@ -35,9 +35,9 @@
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtValorDiaria = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCategoria = new System.Windows.Forms.DataGridView();
             this.conexao2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCategoria)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.conexao2BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,12 +54,12 @@
             // 
             this.txtNomeCategoria.Location = new System.Drawing.Point(38, 58);
             this.txtNomeCategoria.Name = "txtNomeCategoria";
-            this.txtNomeCategoria.Size = new System.Drawing.Size(322, 20);
+            this.txtNomeCategoria.Size = new System.Drawing.Size(385, 20);
             this.txtNomeCategoria.TabIndex = 1;
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(248, 147);
+            this.btnCadastrar.Location = new System.Drawing.Point(311, 146);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(112, 23);
             this.btnCadastrar.TabIndex = 3;
@@ -80,18 +80,25 @@
             // 
             this.txtValorDiaria.Location = new System.Drawing.Point(38, 107);
             this.txtValorDiaria.Name = "txtValorDiaria";
-            this.txtValorDiaria.Size = new System.Drawing.Size(322, 20);
+            this.txtValorDiaria.Size = new System.Drawing.Size(385, 20);
             this.txtValorDiaria.TabIndex = 2;
             // 
-            // dataGridView1
+            // dataGridViewCategoria
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.DataSource = this.conexao2BindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(38, 192);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(322, 362);
-            this.dataGridView1.TabIndex = 4;
+            this.dataGridViewCategoria.AllowUserToAddRows = false;
+            this.dataGridViewCategoria.AllowUserToDeleteRows = false;
+            this.dataGridViewCategoria.AllowUserToOrderColumns = true;
+            this.dataGridViewCategoria.AllowUserToResizeColumns = false;
+            this.dataGridViewCategoria.AllowUserToResizeRows = false;
+            this.dataGridViewCategoria.AutoGenerateColumns = false;
+            this.dataGridViewCategoria.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewCategoria.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCategoria.DataSource = this.conexao2BindingSource;
+            this.dataGridViewCategoria.Location = new System.Drawing.Point(38, 192);
+            this.dataGridViewCategoria.Name = "dataGridViewCategoria";
+            this.dataGridViewCategoria.Size = new System.Drawing.Size(385, 386);
+            this.dataGridViewCategoria.TabIndex = 4;
             // 
             // conexao2BindingSource
             // 
@@ -101,8 +108,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(415, 575);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(484, 650);
+            this.Controls.Add(this.dataGridViewCategoria);
             this.Controls.Add(this.txtValorDiaria);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnCadastrar);
@@ -115,7 +122,7 @@
             this.Text = "Cadastro Categoria";
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCategoria)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.conexao2BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -129,7 +136,7 @@
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtValorDiaria;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewCategoria;
         private System.Windows.Forms.BindingSource conexao2BindingSource;
     }
 }

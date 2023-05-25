@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 using LocadoraClassic.VO;
-using LocadoraClassic.DAL;
 
 namespace LocadoraClassic.View
 {
@@ -19,7 +12,7 @@ namespace LocadoraClassic.View
             InitializeComponent();
         }
 
-        private void graficoDeBarraDeAtrasadisPorMesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void graficoDeBarraDeAtrasadosPorMesToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
@@ -62,11 +55,21 @@ namespace LocadoraClassic.View
             frmTelaLocacao.Show();
         }
 
-        private void conectarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void checarConexãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmConectarBD frmConectarBD = new FrmConectarBD();
-            frmConectarBD.MdiParent = this;
-            frmConectarBD.Show();
+            MessageBox.Show(ConexaoBD.ConnectionStringBD);
+            try
+            {
+                SqlConnection sqlcon;
+                sqlcon = new SqlConnection(ConexaoBD.ConnectionStringBD);
+                sqlcon.Open();
+                MessageBox.Show("Conectado!");
+                sqlcon.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

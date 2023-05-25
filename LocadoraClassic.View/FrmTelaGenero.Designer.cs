@@ -34,8 +34,8 @@
             this.txtNomeGenero = new System.Windows.Forms.TextBox();
             this.btnCadastrarGenero = new System.Windows.Forms.Button();
             this.dataGridViewGenero = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.conexao2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGenero)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.conexao2BindingSource)).BeginInit();
             this.SuspendLayout();
@@ -81,15 +81,15 @@
             this.dataGridViewGenero.Size = new System.Drawing.Size(494, 405);
             this.dataGridViewGenero.TabIndex = 0;
             // 
+            // conexao2BindingSource
+            // 
+            this.conexao2BindingSource.DataSource = typeof(LocadoraClassic.DAL.Conexao2);
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "DataSource";
             this.dataGridViewTextBoxColumn1.HeaderText = "DataSource";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // conexao2BindingSource
-            // 
-            this.conexao2BindingSource.DataSource = typeof(LocadoraClassic.DAL.Conexao2);
             // 
             // FrmTelaGenero
             // 

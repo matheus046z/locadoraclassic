@@ -15,12 +15,14 @@ namespace LocadoraClassic.VO
         public string Cpf { get; set; }
         public string Rg { get; set; }
 
-        Cliente() { }
-        Cliente(int id)
+        public Cliente()
+        {
+
+        }
+        public Cliente(int id)
         {
             Id = id;
         }
-
         public Cliente(string nome, string endereco, string telefone, string cpf, string rg)
         {
             Nome = nome;

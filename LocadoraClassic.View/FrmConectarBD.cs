@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using LocadoraClassic.VO;
 
@@ -19,21 +11,10 @@ namespace LocadoraClassic.View
         {
             InitializeComponent();
         }
-
-        private void txtUserId_TextChanged(object sender, EventArgs e)
+        public void btnConectar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnConectar_Click(object sender, EventArgs e)
-        {
-            string connectionString;
             string concatenarString;
+            string connectionString;
             SqlConnection sqlcon;
 
             ConexaoBD login = new ConexaoBD();
@@ -43,26 +24,27 @@ namespace LocadoraClassic.View
             login.InitialCatalog = txtInitialCatalog.Text;
 
             concatenarString = "Initial Catalog="+login.InitialCatalog+";User ID="+login.UserID+";Password="+login.Password+";Server="+login.Server;
-            MessageBox.Show(concatenarString);
+            //MessageBox.Show(concatenarString);
 
+            ConexaoBD.ConnectionStringBD = concatenarString;
+            //MessageBox.Show(ConexaoBD.ConnectionStringBD);
 
             connectionString = concatenarString;
-                //@"Initial Catalog=locadoraclassic;User ID=Matheus;Password=zmThe$19-03sql; Server=192.168.0.49";
-
             sqlcon = new SqlConnection(connectionString);
 
-            
             try
             {
                 sqlcon.Open();
                 MessageBox.Show("Conectado!");
+                sqlcon.Close();
+                //this.Hide(); // Oculta a tela de login do servidor
+                fmrMenu frmTelaPrincipal = new fmrMenu();
+                frmTelaPrincipal.Show();
             }
             catch (System.Data.SqlClient.SqlException)
             {
                 MessageBox.Show("Falha ao conectar!");
             }
-
-            sqlcon.Close();
         }
     }
 }

@@ -45,31 +45,43 @@ namespace LocadoraClassic.View
             dataGridViewGenero.AutoGenerateColumns = true;
 
             //Configura a origem dos dados
-            conexao2BindingSource.DataSource = GetData("select * from genero");
+            conexao2BindingSource.DataSource = GetData("select * from genero"); // <- Comando SQL a ser enviado ao MSSQL server
             dataGridViewGenero.DataSource = conexao2BindingSource;
 
-            //Automaticamente reajusta as linhas visiveis
-            dataGridViewGenero.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            //Automaticamente reajusta as linhas e colunas, tambem pode ser alterado em propriedades
+            dataGridViewGenero.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewGenero.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         private static DataTable GetData(string sqlCommand)
         {
-            Conexao2.Sqlcon.Open();
-            SqlCommand command;
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            //string sql = "";
-            //sql = "SELECT * FROM genero";
-
-            command = new SqlCommand(sqlCommand, Conexao2.Sqlcon);
-            adapter.InsertCommand = new SqlCommand(sqlCommand, Conexao2.Sqlcon);
-            adapter.InsertCommand.ExecuteNonQuery();
-            command.Dispose();
-            Conexao2.Sqlcon.Close();
-
-            adapter.SelectCommand = command;
             DataTable table = new DataTable();
-            table.Locale = System.Globalization.CultureInfo.InvariantCulture;
-            adapter.Fill(table);
+            try
+            {
+                Conexao2.Sqlcon.Open();
+                SqlCommand command;
+                SqlDataAdapter adapter = new SqlDataAdapter();
 
+                command = new SqlCommand(sqlCommand, Conexao2.Sqlcon);
+                adapter.InsertCommand = command;
+                adapter.InsertCommand.ExecuteNonQuery();
+                command.Dispose();
+                Conexao2.Sqlcon.Close();
+
+                adapter.SelectCommand = command;
+                
+                table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+                adapter.Fill(table);
+            }
+            catch (System.InvalidOperationException)
+            {
+                Conexao2.Sqlcon.Close();
+                MessageBox.Show("O sistema perdeu a conexão ao banco de dados"); 
+            }
+            catch (System.Data.SqlClient.SqlException)
+            {
+                Conexao2.Sqlcon.Close();
+                MessageBox.Show("Erro de pesquisa no banco de dados, verificar com o administrador do sistema");
+            }
             return table;
         }
     }

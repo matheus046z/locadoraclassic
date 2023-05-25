@@ -45,8 +45,8 @@
             this.gráficosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.graficoPizzaDeClientesPorEnderecoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.graficoDeBarraDeAtrasadosPorMasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.conectarBDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.conectarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bancoDeDadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checarConexãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +57,7 @@
             this.locaçãoToolStripMenuItem,
             this.relatóriosToolStripMenuItem,
             this.gráficosToolStripMenuItem,
-            this.conectarBDToolStripMenuItem});
+            this.bancoDeDadosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
@@ -179,22 +179,22 @@
             this.graficoDeBarraDeAtrasadosPorMasToolStripMenuItem.Name = "graficoDeBarraDeAtrasadosPorMasToolStripMenuItem";
             this.graficoDeBarraDeAtrasadosPorMasToolStripMenuItem.Size = new System.Drawing.Size(282, 22);
             this.graficoDeBarraDeAtrasadosPorMasToolStripMenuItem.Text = "Gráfico de Barra de Atrasados por Mês";
-            this.graficoDeBarraDeAtrasadosPorMasToolStripMenuItem.Click += new System.EventHandler(this.graficoDeBarraDeAtrasadisPorMesToolStripMenuItem_Click);
+            this.graficoDeBarraDeAtrasadosPorMasToolStripMenuItem.Click += new System.EventHandler(this.graficoDeBarraDeAtrasadosPorMesToolStripMenuItem_Click);
             // 
-            // conectarBDToolStripMenuItem
+            // bancoDeDadosToolStripMenuItem
             // 
-            this.conectarBDToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.conectarToolStripMenuItem});
-            this.conectarBDToolStripMenuItem.Name = "conectarBDToolStripMenuItem";
-            this.conectarBDToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
-            this.conectarBDToolStripMenuItem.Text = "Conectar BD";
+            this.bancoDeDadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.checarConexãoToolStripMenuItem});
+            this.bancoDeDadosToolStripMenuItem.Name = "bancoDeDadosToolStripMenuItem";
+            this.bancoDeDadosToolStripMenuItem.Size = new System.Drawing.Size(103, 20);
+            this.bancoDeDadosToolStripMenuItem.Text = "Banco de dados";
             // 
-            // conectarToolStripMenuItem
+            // checarConexãoToolStripMenuItem
             // 
-            this.conectarToolStripMenuItem.Name = "conectarToolStripMenuItem";
-            this.conectarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.conectarToolStripMenuItem.Text = "Conectar";
-            this.conectarToolStripMenuItem.Click += new System.EventHandler(this.conectarToolStripMenuItem_Click);
+            this.checarConexãoToolStripMenuItem.Name = "checarConexãoToolStripMenuItem";
+            this.checarConexãoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.checarConexãoToolStripMenuItem.Text = "Checar Conexão";
+            this.checarConexãoToolStripMenuItem.Click += new System.EventHandler(this.checarConexãoToolStripMenuItem_Click);
             // 
             // fmrMenu
             // 
@@ -237,8 +237,8 @@
         private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem realizarLocacaoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relatorioDiarioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem conectarBDToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem conectarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bancoDeDadosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem checarConexãoToolStripMenuItem;
     }
 }
 
