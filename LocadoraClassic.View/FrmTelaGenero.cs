@@ -1,16 +1,8 @@
 ﻿using LocadoraClassic.DAL;
 using LocadoraClassic.VO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Drawing.Text;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LocadoraClassic.View
@@ -62,7 +54,7 @@ namespace LocadoraClassic.View
                 SqlDataAdapter adapter = new SqlDataAdapter();
 
                 command = new SqlCommand(sqlCommand, Conexao2.Sqlcon);
-                adapter.InsertCommand = command;
+                adapter.InsertCommand = new SqlCommand(sqlCommand, Conexao2.Sqlcon);
                 adapter.InsertCommand.ExecuteNonQuery();
                 command.Dispose();
                 Conexao2.Sqlcon.Close();
@@ -83,6 +75,46 @@ namespace LocadoraClassic.View
                 MessageBox.Show("Erro de pesquisa no banco de dados, verificar com o administrador do sistema");
             }
             return table;
+        }
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            int id = 0;
+
+            if(dataGridViewGenero.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataGridViewGenero.SelectedRows[0];
+                id = Convert.ToInt32(selectedRow.Cells["id"].Value);
+                MessageBox.Show("O valor do campo 'id' a ser excluido é: " + id.ToString());
+            }
+            Genero genero = new Genero();
+            GeneroDAL generoDAL = new GeneroDAL();
+
+            genero.Id = id;
+            generoDAL.DeletarGenero(genero);
+            InitializeDataGridView();
+        }
+
+        private void btnReordenarId_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            Genero genero = new Genero();
+            GeneroDAL generoDAL = new GeneroDAL();
+            int id = 0;
+
+            if (dataGridViewGenero.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataGridViewGenero.SelectedRows[0];
+                id = Convert.ToInt32(selectedRow.Cells["id"].Value);
+                MessageBox.Show("O 'id' a ser alterado é: " + id.ToString());
+            }
+            genero.Nome = txtNomeNovo.Text;
+            genero.Id = id;
+            generoDAL.AlterarGenero(genero);
+            InitializeDataGridView();
         }
     }
  }

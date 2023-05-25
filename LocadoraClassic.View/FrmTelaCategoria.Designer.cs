@@ -37,6 +37,7 @@
             this.txtValorDiaria = new System.Windows.Forms.TextBox();
             this.dataGridViewCategoria = new System.Windows.Forms.DataGridView();
             this.conexao2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnExcluir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCategoria)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.conexao2BindingSource)).BeginInit();
             this.SuspendLayout();
@@ -104,11 +105,22 @@
             // 
             this.conexao2BindingSource.DataSource = typeof(LocadoraClassic.DAL.Conexao2);
             // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Location = new System.Drawing.Point(203, 146);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(102, 23);
+            this.btnExcluir.TabIndex = 6;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
             // FrmTelaCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 650);
+            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.dataGridViewCategoria);
             this.Controls.Add(this.txtValorDiaria);
             this.Controls.Add(this.label2);
@@ -138,5 +150,6 @@
         private System.Windows.Forms.TextBox txtValorDiaria;
         private System.Windows.Forms.DataGridView dataGridViewCategoria;
         private System.Windows.Forms.BindingSource conexao2BindingSource;
+        private System.Windows.Forms.Button btnExcluir;
     }
 }

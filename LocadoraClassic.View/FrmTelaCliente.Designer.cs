@@ -43,6 +43,7 @@
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.dataGridViewClientes = new System.Windows.Forms.DataGridView();
             this.conexao2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnExcluir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.conexao2BindingSource)).BeginInit();
             this.SuspendLayout();
@@ -153,11 +154,22 @@
             // 
             this.conexao2BindingSource.DataSource = typeof(LocadoraClassic.DAL.Conexao2);
             // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Location = new System.Drawing.Point(92, 342);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(426, 23);
+            this.btnExcluir.TabIndex = 7;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
             // FrmTelaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1435, 590);
+            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.dataGridViewClientes);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.mtxtTelefone);
@@ -200,5 +212,6 @@
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.DataGridView dataGridViewClientes;
         private System.Windows.Forms.BindingSource conexao2BindingSource;
+        private System.Windows.Forms.Button btnExcluir;
     }
 }

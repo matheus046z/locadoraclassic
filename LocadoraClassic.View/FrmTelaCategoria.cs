@@ -61,5 +61,24 @@ namespace LocadoraClassic.View
 
             return table;
         }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            int id = 0;
+
+            if (dataGridViewCategoria.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataGridViewCategoria.SelectedRows[0];
+                id = Convert.ToInt32(selectedRow.Cells["id"].Value);
+                MessageBox.Show("O valor do campo 'id' a ser excluido é: " + id.ToString());
+            }
+
+            Categoria categoria = new Categoria();
+            CategoriaDAL categoriaDAL = new CategoriaDAL();
+
+            categoria.Id = id;
+            categoriaDAL.DeletarCategoria(categoria);
+            InitializeDataGridView();
+        }
     }
 }

@@ -19,5 +19,17 @@ namespace LocadoraClassic.DAL
             command.Dispose();
             Conexao2.Sqlcon.Close();
         }
+        public void DeletarCategoria(Categoria categoria)
+        {
+            Conexao2.Sqlcon.Open();
+            SqlCommand command;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            string sql = "DELETE FROM categoria WHERE Id=" + categoria.Id;
+            command = new SqlCommand(sql, Conexao2.Sqlcon);
+            adapter.InsertCommand = new SqlCommand(sql, Conexao2.Sqlcon);
+            adapter.InsertCommand.ExecuteNonQuery();
+            command.Dispose();
+            Conexao2.Sqlcon.Close();
+        }
     }
 }

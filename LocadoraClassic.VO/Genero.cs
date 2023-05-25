@@ -18,6 +18,11 @@ namespace LocadoraClassic.VO
         public Genero()
         {
         }
+
+        public Genero(int id)
+        {
+            Id = id;
+        }
         public Genero(int id, string nome)
         {
             Id = id;
