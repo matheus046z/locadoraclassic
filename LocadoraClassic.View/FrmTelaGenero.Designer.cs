@@ -34,12 +34,14 @@
             this.txtNomeGenero = new System.Windows.Forms.TextBox();
             this.btnCadastrarGenero = new System.Windows.Forms.Button();
             this.dataGridViewGenero = new System.Windows.Forms.DataGridView();
-            this.conexao2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.txtNomeNovo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtNomeSelecionado = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.conexao2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGenero)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.conexao2BindingSource)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +64,7 @@
             // 
             // btnCadastrarGenero
             // 
-            this.btnCadastrarGenero.Location = new System.Drawing.Point(395, 80);
+            this.btnCadastrarGenero.Location = new System.Drawing.Point(80, 80);
             this.btnCadastrarGenero.Name = "btnCadastrarGenero";
             this.btnCadastrarGenero.Size = new System.Drawing.Size(141, 23);
             this.btnCadastrarGenero.TabIndex = 2;
@@ -80,14 +82,10 @@
             this.dataGridViewGenero.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewGenero.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewGenero.DataSource = this.conexao2BindingSource;
-            this.dataGridViewGenero.Location = new System.Drawing.Point(42, 155);
+            this.dataGridViewGenero.Location = new System.Drawing.Point(42, 163);
             this.dataGridViewGenero.Name = "dataGridViewGenero";
             this.dataGridViewGenero.Size = new System.Drawing.Size(494, 408);
             this.dataGridViewGenero.TabIndex = 0;
-            // 
-            // conexao2BindingSource
-            // 
-            this.conexao2BindingSource.DataSource = typeof(LocadoraClassic.DAL.Conexao2);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -97,7 +95,7 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(278, 80);
+            this.btnExcluir.Location = new System.Drawing.Point(227, 80);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(111, 23);
             this.btnExcluir.TabIndex = 3;
@@ -107,7 +105,7 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(41, 126);
+            this.btnAlterar.Location = new System.Drawing.Point(42, 128);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(165, 23);
             this.btnAlterar.TabIndex = 5;
@@ -117,26 +115,52 @@
             // 
             // txtNomeNovo
             // 
-            this.txtNomeNovo.Location = new System.Drawing.Point(212, 128);
+            this.txtNomeNovo.Location = new System.Drawing.Point(347, 130);
             this.txtNomeNovo.Name = "txtNomeNovo";
-            this.txtNomeNovo.Size = new System.Drawing.Size(108, 21);
+            this.txtNomeNovo.Size = new System.Drawing.Size(142, 21);
             this.txtNomeNovo.TabIndex = 6;
+            this.txtNomeNovo.TextChanged += new System.EventHandler(this.txtNomeNovo_TextChanged_1);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(212, 114);
+            this.label2.Location = new System.Drawing.Point(345, 116);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 11);
             this.label2.TabIndex = 7;
             this.label2.Text = "Novo Nome";
+            // 
+            // txtNomeSelecionado
+            // 
+            this.txtNomeSelecionado.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtNomeSelecionado.Enabled = false;
+            this.txtNomeSelecionado.Location = new System.Drawing.Point(227, 130);
+            this.txtNomeSelecionado.Name = "txtNomeSelecionado";
+            this.txtNomeSelecionado.Size = new System.Drawing.Size(111, 21);
+            this.txtNomeSelecionado.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(225, 116);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 11);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Nome Selecionado";
+            // 
+            // conexao2BindingSource
+            // 
+            this.conexao2BindingSource.DataSource = typeof(LocadoraClassic.DAL.Conexao2);
             // 
             // FrmTelaGenero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(586, 605);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtNomeSelecionado);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNomeNovo);
             this.Controls.Add(this.btnAlterar);
@@ -174,5 +198,7 @@
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.TextBox txtNomeNovo;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtNomeSelecionado;
+        private System.Windows.Forms.Label label3;
     }
 }

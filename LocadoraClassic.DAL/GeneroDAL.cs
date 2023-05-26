@@ -1,4 +1,5 @@
 ﻿using LocadoraClassic.VO;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace LocadoraClassic.DAL
@@ -33,6 +34,26 @@ namespace LocadoraClassic.DAL
             adapter.InsertCommand.ExecuteNonQuery();
             command.Dispose();
             Conexao2.Sqlcon.Close();
+        }
+        public string BuscarGenero(Genero genero)
+        {
+            DataTable dt = new DataTable();
+            Conexao2.Sqlcon.Open();
+            SqlCommand command;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            string sql = "SELECT nome FROM genero WHERE Id=" + genero.Id;
+            command = new SqlCommand(sql, Conexao2.Sqlcon);
+            adapter.InsertCommand = new SqlCommand(sql, Conexao2.Sqlcon);
+            adapter.InsertCommand.ExecuteNonQuery();
+            adapter.SelectCommand = command;
+            adapter.Fill(dt);
+            command.Dispose();
+            Conexao2.Sqlcon.Close();
+            DataSet ds = new DataSet();
+            ds.Tables.Add(dt);
+            string xml = ds.GetXml();
+
+            return xml;
         }
         public void AlterarGenero(Genero genero)
         {

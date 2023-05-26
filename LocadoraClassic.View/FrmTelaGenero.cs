@@ -4,6 +4,7 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LocadoraClassic.View
 {
@@ -109,12 +110,28 @@ namespace LocadoraClassic.View
             {
                 DataGridViewRow selectedRow = dataGridViewGenero.SelectedRows[0];
                 id = Convert.ToInt32(selectedRow.Cells["id"].Value);
-                MessageBox.Show("O 'id' a ser alterado é: " + id.ToString());
+                MessageBox.Show("O 'id' a ser alterado é: " + id.ToString());   
             }
-            genero.Nome = txtNomeNovo.Text;
             genero.Id = id;
+            genero.Nome = txtNomeNovo.Text;
             generoDAL.AlterarGenero(genero);
             InitializeDataGridView();
+        }
+        private void txtNomeNovo_TextChanged_1(object sender, EventArgs e)
+        {
+            Genero genero = new Genero();
+            GeneroDAL generoDAL = new GeneroDAL();
+            int id = 0;
+
+            if (dataGridViewGenero.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataGridViewGenero.SelectedRows[0];
+                id = Convert.ToInt32(selectedRow.Cells["id"].Value);
+                MessageBox.Show("O 'id' a ser alterado é: " + id.ToString());
+                genero.Id = id;
+                txtNomeSelecionado.Text = generoDAL.BuscarGenero(genero);
+            }
+            MessageBox.Show(generoDAL.BuscarGenero(genero));
         }
     }
  }

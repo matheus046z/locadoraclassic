@@ -127,4 +127,3 @@ C:\Users\ALUNO\source\repos\locadoraclassic2\locadoraclassic\LocadoraClassic.Vie
 C:\Users\ALUNO\source\repos\locadoraclassic2\locadoraclassic\LocadoraClassic.View\obj\Debug\LocadoraClassic.View.csproj.CopyComplete
 C:\Users\ALUNO\source\repos\locadoraclassic2\locadoraclassic\LocadoraClassic.View\obj\Debug\LocadoraClassic.View.exe
 C:\Users\ALUNO\source\repos\locadoraclassic2\locadoraclassic\LocadoraClassic.View\obj\Debug\LocadoraClassic.View.pdb
-C:\Users\ALUNO\source\repos\locadoraclassic2\locadoraclassic\LocadoraClassic.View\obj\Debug\LocadoraClassic.View.FrmAlterarGenero.resources

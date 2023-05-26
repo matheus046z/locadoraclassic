@@ -55,7 +55,7 @@
             this.txtServer.AutoCompleteCustomSource.AddRange(new string[] {
             "192.168.0.49",
             "177.235.71.5"});
-            this.txtServer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtServer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtServer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtServer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtServer.Location = new System.Drawing.Point(62, 49);
@@ -86,7 +86,7 @@
             this.txtUserId.AllowDrop = true;
             this.txtUserId.AutoCompleteCustomSource.AddRange(new string[] {
             "Matheus"});
-            this.txtUserId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtUserId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtUserId.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtUserId.Location = new System.Drawing.Point(62, 88);
             this.txtUserId.Name = "txtUserId";
@@ -107,7 +107,7 @@
             this.txtInitialCatalog.AllowDrop = true;
             this.txtInitialCatalog.AutoCompleteCustomSource.AddRange(new string[] {
             "locadoraclassic"});
-            this.txtInitialCatalog.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtInitialCatalog.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.txtInitialCatalog.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtInitialCatalog.Location = new System.Drawing.Point(62, 166);
             this.txtInitialCatalog.Name = "txtInitialCatalog";
