@@ -37,7 +37,9 @@ namespace LocadoraClassic.DAL
         }
         public string BuscarGenero(Genero genero)
         {
-            DataTable dt = new DataTable();
+            DataTable dt = new DataTable("DTnome");
+            DataSet ds = new DataSet("DSnome");
+            string retorno = "";
             Conexao2.Sqlcon.Open();
             SqlCommand command;
             SqlDataAdapter adapter = new SqlDataAdapter();
@@ -46,14 +48,18 @@ namespace LocadoraClassic.DAL
             adapter.InsertCommand = new SqlCommand(sql, Conexao2.Sqlcon);
             adapter.InsertCommand.ExecuteNonQuery();
             adapter.SelectCommand = command;
+            
             adapter.Fill(dt);
+            
             command.Dispose();
             Conexao2.Sqlcon.Close();
-            DataSet ds = new DataSet();
+            
             ds.Tables.Add(dt);
-            string xml = ds.GetXml();
-
-            return xml;
+            if (dt.Rows.Count > 0)
+            {
+                retorno = dt.Rows[0][0].ToString();
+            }
+            return retorno;
         }
         public void AlterarGenero(Genero genero)
         {
@@ -69,8 +75,3 @@ namespace LocadoraClassic.DAL
         }
     }
 }
-/*
-UPDATE Customers
-SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
-WHERE CustomerID = 1;
-*/

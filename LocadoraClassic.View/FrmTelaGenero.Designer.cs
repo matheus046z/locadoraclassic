@@ -34,6 +34,7 @@
             this.txtNomeGenero = new System.Windows.Forms.TextBox();
             this.btnCadastrarGenero = new System.Windows.Forms.Button();
             this.dataGridViewGenero = new System.Windows.Forms.DataGridView();
+            this.conexao2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNomeSelecionado = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.conexao2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGenero)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.conexao2BindingSource)).BeginInit();
             this.SuspendLayout();
@@ -84,8 +84,14 @@
             this.dataGridViewGenero.DataSource = this.conexao2BindingSource;
             this.dataGridViewGenero.Location = new System.Drawing.Point(42, 163);
             this.dataGridViewGenero.Name = "dataGridViewGenero";
+            this.dataGridViewGenero.ReadOnly = true;
             this.dataGridViewGenero.Size = new System.Drawing.Size(494, 408);
             this.dataGridViewGenero.TabIndex = 0;
+            this.dataGridViewGenero.SelectionChanged += new System.EventHandler(this.DataGridViewGenero_SelectionChanged);
+            // 
+            // conexao2BindingSource
+            // 
+            this.conexao2BindingSource.DataSource = typeof(LocadoraClassic.DAL.Conexao2);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -119,7 +125,6 @@
             this.txtNomeNovo.Name = "txtNomeNovo";
             this.txtNomeNovo.Size = new System.Drawing.Size(142, 21);
             this.txtNomeNovo.TabIndex = 6;
-            this.txtNomeNovo.TextChanged += new System.EventHandler(this.txtNomeNovo_TextChanged_1);
             // 
             // label2
             // 
@@ -149,10 +154,6 @@
             this.label3.Size = new System.Drawing.Size(82, 11);
             this.label3.TabIndex = 9;
             this.label3.Text = "Nome Selecionado";
-            // 
-            // conexao2BindingSource
-            // 
-            this.conexao2BindingSource.DataSource = typeof(LocadoraClassic.DAL.Conexao2);
             // 
             // FrmTelaGenero
             // 
