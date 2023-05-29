@@ -38,7 +38,7 @@ namespace LocadoraClassic.DAL
         public string BuscarGenero(Genero genero)
         {
             DataTable dt = new DataTable("DTnome");
-            DataSet ds = new DataSet("DSnome");
+            //DataSet ds = new DataSet("DSnome");
             string retorno = "";
             Conexao2.Sqlcon.Open();
             SqlCommand command;
@@ -54,7 +54,7 @@ namespace LocadoraClassic.DAL
             command.Dispose();
             Conexao2.Sqlcon.Close();
             
-            ds.Tables.Add(dt);
+            //ds.Tables.Add(dt);
             if (dt.Rows.Count > 0)
             {
                 retorno = dt.Rows[0][0].ToString();

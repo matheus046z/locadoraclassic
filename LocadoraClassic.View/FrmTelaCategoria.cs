@@ -80,5 +80,44 @@ namespace LocadoraClassic.View
             categoriaDAL.DeletarCategoria(categoria);
             InitializeDataGridView();
         }
+        private void DataGridViewCategoria_SelectionChanged(object sender, EventArgs e)
+        {
+            Categoria categoria = new Categoria();
+            CategoriaDAL categoriaDAL = new CategoriaDAL();
+
+            int id = 0;
+
+            if (dataGridViewCategoria.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataGridViewCategoria.SelectedRows[0];
+                id = Convert.ToInt32(selectedRow.Cells["id"].Value);
+                //MessageBox.Show("O 'id' a ser alterado é: " + id.ToString());
+                categoria.Id = id;
+                List<DataRow> nomeValor = categoriaDAL.BuscarCategoria(categoria);
+                txtNomeSelecionado.Text = nomeValor[0][0].ToString();
+                txtValorSelecionado.Text = nomeValor[0][1].ToString();
+
+            }
+            // MessageBox.Show(generoDAL.BuscarGenero(genero));
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            Categoria categoria = new Categoria();
+            CategoriaDAL categoriaDAL = new CategoriaDAL();
+
+            int id = 0;
+
+            if (dataGridViewCategoria.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataGridViewCategoria.SelectedRows[0];
+                id = Convert.ToInt32(selectedRow.Cells["id"].Value);
+            }
+            categoria.Id = id;
+            categoria.Nome = txtNomeNovo.Text;
+            categoria.ValorDiaria = txtValorNovo.Text;
+            categoriaDAL.AlterarCategoria(categoria);
+            InitializeDataGridView();
+        }
     }
 }

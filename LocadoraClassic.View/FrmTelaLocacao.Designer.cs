@@ -89,7 +89,7 @@
             this.textBox1.Location = new System.Drawing.Point(166, 33);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(317, 21);
-            this.textBox1.TabIndex = 3;
+            this.textBox1.TabIndex = 32;
             // 
             // groupBox1
             // 
@@ -129,7 +129,7 @@
             this.textBox2.Location = new System.Drawing.Point(12, 149);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(219, 21);
-            this.textBox2.TabIndex = 7;
+            this.textBox2.TabIndex = 5;
             // 
             // button1
             // 
@@ -164,7 +164,7 @@
             this.comboBox2.Location = new System.Drawing.Point(12, 93);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(219, 21);
-            this.comboBox2.TabIndex = 3;
+            this.comboBox2.TabIndex = 4;
             // 
             // label4
             // 
@@ -190,7 +190,7 @@
             this.comboBox1.Location = new System.Drawing.Point(12, 37);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(222, 21);
-            this.comboBox1.TabIndex = 0;
+            this.comboBox1.TabIndex = 3;
             // 
             // groupBox3
             // 
