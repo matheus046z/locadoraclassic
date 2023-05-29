@@ -67,6 +67,7 @@
     <Compile Include="Categoria.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="ConexaoBD.cs" />
+    <Compile Include="Filme.cs" />
     <Compile Include="Genero.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

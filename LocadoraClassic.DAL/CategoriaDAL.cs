@@ -33,7 +33,7 @@ namespace LocadoraClassic.DAL
             Conexao2.Sqlcon.Open();
             SqlCommand command;
             SqlDataAdapter adapter = new SqlDataAdapter();
-            string sql = "SELECT nome,valordiaria FROM categoria WHERE Id=" + categoria.Id;
+            string sql = "SELECT nome,valordiaria FROM categoria WHERE Id_categoria=" + categoria.Id;
             command = new SqlCommand(sql, Conexao2.Sqlcon);
             adapter.InsertCommand = new SqlCommand(sql, Conexao2.Sqlcon);
             adapter.InsertCommand.ExecuteNonQuery();
@@ -53,7 +53,7 @@ namespace LocadoraClassic.DAL
             Conexao2.Sqlcon.Open();
             SqlCommand command;
             SqlDataAdapter adapter = new SqlDataAdapter();
-            string sql = "DELETE FROM categoria WHERE Id=" + categoria.Id;
+            string sql = "DELETE FROM categoria WHERE Id_categoria=" + categoria.Id;
             command = new SqlCommand(sql, Conexao2.Sqlcon);
             adapter.InsertCommand = new SqlCommand(sql, Conexao2.Sqlcon);
             adapter.InsertCommand.ExecuteNonQuery();
@@ -65,7 +65,7 @@ namespace LocadoraClassic.DAL
             Conexao2.Sqlcon.Open();
             SqlCommand command;
             SqlDataAdapter adapter = new SqlDataAdapter();
-            string sql = "UPDATE categoria SET nome = '" + categoria.Nome + "', valordiaria = '" + categoria.ValorDiaria + "' WHERE Id = " + categoria.Id;
+            string sql = "UPDATE categoria SET nome = '" + categoria.Nome + "', valordiaria = '" + categoria.ValorDiaria + "' WHERE Id_categoria = " + categoria.Id;
             command = new SqlCommand(sql, Conexao2.Sqlcon);
             adapter.InsertCommand = new SqlCommand(sql, Conexao2.Sqlcon);
             adapter.InsertCommand.ExecuteNonQuery();

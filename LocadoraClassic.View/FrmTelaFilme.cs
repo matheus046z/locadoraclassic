@@ -16,10 +16,10 @@ namespace LocadoraClassic.View
         {
             InitializeComponent();
         }
+        //private DataTable popularComboBox()
+        //{
+        //    DataTable dt = new DataTable();
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        //}
     }
 }

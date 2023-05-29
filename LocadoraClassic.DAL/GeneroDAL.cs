@@ -28,7 +28,7 @@ namespace LocadoraClassic.DAL
             Conexao2.Sqlcon.Open();
             SqlCommand command;
             SqlDataAdapter adapter = new SqlDataAdapter();
-            string sql = "DELETE FROM genero WHERE Id="+genero.Id;
+            string sql = "DELETE FROM genero WHERE Id_genero="+genero.Id;
             command = new SqlCommand(sql, Conexao2.Sqlcon);
             adapter.InsertCommand = new SqlCommand(sql, Conexao2.Sqlcon);
             adapter.InsertCommand.ExecuteNonQuery();
@@ -43,7 +43,7 @@ namespace LocadoraClassic.DAL
             Conexao2.Sqlcon.Open();
             SqlCommand command;
             SqlDataAdapter adapter = new SqlDataAdapter();
-            string sql = "SELECT nome FROM genero WHERE Id=" + genero.Id;
+            string sql = "SELECT nome FROM genero WHERE Id_genero=" + genero.Id;
             command = new SqlCommand(sql, Conexao2.Sqlcon);
             adapter.InsertCommand = new SqlCommand(sql, Conexao2.Sqlcon);
             adapter.InsertCommand.ExecuteNonQuery();
@@ -66,7 +66,7 @@ namespace LocadoraClassic.DAL
             Conexao2.Sqlcon.Open();
             SqlCommand command;
             SqlDataAdapter adapter = new SqlDataAdapter();
-            string sql = "UPDATE genero SET nome = '" + genero.Nome + "' WHERE Id = " + genero.Id;
+            string sql = "UPDATE genero SET nome = '" + genero.Nome + "' WHERE Id_genero = " + genero.Id;
             command = new SqlCommand(sql, Conexao2.Sqlcon);
             adapter.InsertCommand = new SqlCommand(sql, Conexao2.Sqlcon);
             adapter.InsertCommand.ExecuteNonQuery();

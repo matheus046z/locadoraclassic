@@ -84,7 +84,7 @@ namespace LocadoraClassic.View
             if(dataGridViewGenero.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = dataGridViewGenero.SelectedRows[0];
-                id = Convert.ToInt32(selectedRow.Cells["id"].Value);
+                id = Convert.ToInt32(selectedRow.Cells["id_genero"].Value);
                 MessageBox.Show("O valor do campo 'id' a ser excluido é: " + id.ToString());
             }
             Genero genero = new Genero();
@@ -109,7 +109,7 @@ namespace LocadoraClassic.View
             if (dataGridViewGenero.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = dataGridViewGenero.SelectedRows[0];
-                id = Convert.ToInt32(selectedRow.Cells["id"].Value);
+                id = Convert.ToInt32(selectedRow.Cells["id_genero"].Value);
                 //MessageBox.Show("O 'id' a ser alterado é: " + id.ToString());   
             }
             genero.Id = id;
@@ -126,7 +126,7 @@ namespace LocadoraClassic.View
             if (dataGridViewGenero.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = dataGridViewGenero.SelectedRows[0];
-                id = Convert.ToInt32(selectedRow.Cells["id"].Value);
+                id = Convert.ToInt32(selectedRow.Cells["id_genero"].Value);
                 //MessageBox.Show("O 'id' a ser alterado é: " + id.ToString());
                 genero.Id = id;
                 txtNomeSelecionado.Text = generoDAL.BuscarGenero(genero);

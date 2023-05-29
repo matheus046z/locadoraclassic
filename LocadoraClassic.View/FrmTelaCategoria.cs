@@ -69,7 +69,7 @@ namespace LocadoraClassic.View
             if (dataGridViewCategoria.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = dataGridViewCategoria.SelectedRows[0];
-                id = Convert.ToInt32(selectedRow.Cells["id"].Value);
+                id = Convert.ToInt32(selectedRow.Cells["id_categoria"].Value);
                 MessageBox.Show("O valor do campo 'id' a ser excluido é: " + id.ToString());
             }
 
@@ -90,7 +90,7 @@ namespace LocadoraClassic.View
             if (dataGridViewCategoria.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = dataGridViewCategoria.SelectedRows[0];
-                id = Convert.ToInt32(selectedRow.Cells["id"].Value);
+                id = Convert.ToInt32(selectedRow.Cells["id_categoria"].Value);
                 //MessageBox.Show("O 'id' a ser alterado é: " + id.ToString());
                 categoria.Id = id;
                 List<DataRow> nomeValor = categoriaDAL.BuscarCategoria(categoria);
@@ -111,7 +111,7 @@ namespace LocadoraClassic.View
             if (dataGridViewCategoria.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = dataGridViewCategoria.SelectedRows[0];
-                id = Convert.ToInt32(selectedRow.Cells["id"].Value);
+                id = Convert.ToInt32(selectedRow.Cells["id_categoria"].Value);
             }
             categoria.Id = id;
             categoria.Nome = txtNomeNovo.Text;

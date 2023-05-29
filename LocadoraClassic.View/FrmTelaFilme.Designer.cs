@@ -36,9 +36,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CategoriaComboBox = new System.Windows.Forms.ComboBox();
             this.conexao2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.GeneroComboBox = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -103,34 +103,34 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Banner";
             // 
-            // comboBox1
+            // CategoriaComboBox
             // 
-            this.comboBox1.DataSource = this.conexao2BindingSource;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(28, 36);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(343, 21);
-            this.comboBox1.TabIndex = 7;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.CategoriaComboBox.DataSource = this.conexao2BindingSource;
+            this.CategoriaComboBox.FormattingEnabled = true;
+            this.CategoriaComboBox.Location = new System.Drawing.Point(28, 36);
+            this.CategoriaComboBox.Name = "CategoriaComboBox";
+            this.CategoriaComboBox.Size = new System.Drawing.Size(343, 21);
+            this.CategoriaComboBox.TabIndex = 0;
             // 
             // conexao2BindingSource
             // 
             this.conexao2BindingSource.DataSource = typeof(LocadoraClassic.DAL.Conexao2);
             // 
-            // comboBox2
+            // GeneroComboBox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(28, 76);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 8;
+            this.GeneroComboBox.DataSource = this.conexao2BindingSource;
+            this.GeneroComboBox.FormattingEnabled = true;
+            this.GeneroComboBox.Location = new System.Drawing.Point(28, 76);
+            this.GeneroComboBox.Name = "GeneroComboBox";
+            this.GeneroComboBox.Size = new System.Drawing.Size(121, 21);
+            this.GeneroComboBox.TabIndex = 1;
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(28, 129);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(343, 21);
-            this.textBox1.TabIndex = 9;
+            this.textBox1.TabIndex = 2;
             // 
             // textBox3
             // 
@@ -138,7 +138,7 @@
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(343, 126);
-            this.textBox3.TabIndex = 11;
+            this.textBox3.TabIndex = 4;
             // 
             // checkBox1
             // 
@@ -156,7 +156,7 @@
             this.maskedTextBox1.Mask = "00:00";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(343, 21);
-            this.maskedTextBox1.TabIndex = 13;
+            this.maskedTextBox1.TabIndex = 3;
             // 
             // pictureBox1
             // 
@@ -172,7 +172,7 @@
             this.button1.Location = new System.Drawing.Point(47, 406);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(662, 23);
-            this.button1.TabIndex = 15;
+            this.button1.TabIndex = 5;
             this.button1.Text = "Cadastrar";
             this.button1.UseVisualStyleBackColor = true;
             // 
@@ -188,8 +188,8 @@
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.GeneroComboBox);
+            this.Controls.Add(this.CategoriaComboBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -219,8 +219,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox CategoriaComboBox;
+        private System.Windows.Forms.ComboBox GeneroComboBox;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.CheckBox checkBox1;
