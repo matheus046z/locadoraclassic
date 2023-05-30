@@ -17,6 +17,7 @@ namespace LocadoraClassic.DAL
             adapter.InsertCommand.ExecuteNonQuery();
             command.Dispose();
             Conexao2.Sqlcon.Close();
+            
         }
         public void DeletarCliente(Cliente cliente)
         {

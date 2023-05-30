@@ -73,5 +73,23 @@ namespace LocadoraClassic.DAL
             command.Dispose();
             Conexao2.Sqlcon.Close();
         }
+        public static DataTable ValoresComboBoxGenero()
+        {
+            DataTable dt = new DataTable();
+
+            Conexao2.Sqlcon.Open();
+            SqlCommand command;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            string sql = "SELECT Id_genero,nome FROM genero";
+            //sql = "";
+            command = new SqlCommand(sql, Conexao2.Sqlcon);
+            adapter.InsertCommand = new SqlCommand(sql, Conexao2.Sqlcon);
+            adapter.InsertCommand.ExecuteNonQuery();
+            adapter.SelectCommand = command;
+            adapter.Fill(dt);
+            command.Dispose();
+            Conexao2.Sqlcon.Close();
+            return dt;
+        }
     }
 }

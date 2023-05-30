@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Linq.Expressions;
 
 namespace LocadoraClassic.View
 {
@@ -18,24 +19,32 @@ namespace LocadoraClassic.View
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            Cliente cliente = new Cliente();
-            cliente.Nome = txtNome.Text;
-            cliente.Endereco = txtEndereco.Text;
-            cliente.Telefone = mtxtTelefone.Text;
-            cliente.Cpf = mtxtCPF.Text;
-            cliente.Rg = txtRG.Text;
-
-            if (ValidarCPF(cliente.Cpf) == true)
+            try
             {
-                ClienteDAL clienteDAL = new ClienteDAL();
-                clienteDAL.InserirCliente(cliente);
+                Cliente cliente = new Cliente();
+                cliente.Nome = txtNome.Text;
+                cliente.Endereco = txtEndereco.Text;
+                cliente.Telefone = mtxtTelefone.Text;
+                cliente.Cpf = mtxtCPF.Text;
+                cliente.Rg = txtRG.Text;
 
-                MessageBox.Show(cliente.Nome + " inserido no banco de dados!");
-                InitializeDataGridView();
+                if (ValidarCPF(cliente.Cpf) == true)
+                {
+                    ClienteDAL clienteDAL = new ClienteDAL();
+                    clienteDAL.InserirCliente(cliente);
+
+                    MessageBox.Show(cliente.Nome + " inserido no banco de dados!");
+                    InitializeDataGridView();
+                }
+                else
+                {
+                    MessageBox.Show("Cpf inválido!");
+                }
             }
-            else
+
+            catch (System.Data.SqlClient.SqlException)
             {
-                MessageBox.Show("Cpf inválido!");
+                MessageBox.Show("ERRO: Verifique se o CPF já foi cadastrado");
             }
         }
 

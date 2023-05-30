@@ -39,14 +39,16 @@
             this.CategoriaComboBox = new System.Windows.Forms.ComboBox();
             this.conexao2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.GeneroComboBox = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.txtNomeFilme = new System.Windows.Forms.TextBox();
+            this.txtSinopse = new System.Windows.Forms.TextBox();
+            this.checkBoxLocado = new System.Windows.Forms.CheckBox();
+            this.mtxtDuracao = new System.Windows.Forms.MaskedTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.dataGridViewFilmes = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.conexao2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFilmes)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -111,6 +113,7 @@
             this.CategoriaComboBox.Name = "CategoriaComboBox";
             this.CategoriaComboBox.Size = new System.Drawing.Size(343, 21);
             this.CategoriaComboBox.TabIndex = 0;
+            this.CategoriaComboBox.Click += new System.EventHandler(this.CategoriaComboBox_Click);
             // 
             // conexao2BindingSource
             // 
@@ -124,39 +127,40 @@
             this.GeneroComboBox.Name = "GeneroComboBox";
             this.GeneroComboBox.Size = new System.Drawing.Size(121, 21);
             this.GeneroComboBox.TabIndex = 1;
+            this.GeneroComboBox.Click += new System.EventHandler(this.GeneroComboBox_Click);
             // 
-            // textBox1
+            // txtNomeFilme
             // 
-            this.textBox1.Location = new System.Drawing.Point(28, 129);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(343, 21);
-            this.textBox1.TabIndex = 2;
+            this.txtNomeFilme.Location = new System.Drawing.Point(28, 129);
+            this.txtNomeFilme.Name = "txtNomeFilme";
+            this.txtNomeFilme.Size = new System.Drawing.Size(343, 21);
+            this.txtNomeFilme.TabIndex = 2;
             // 
-            // textBox3
+            // txtSinopse
             // 
-            this.textBox3.Location = new System.Drawing.Point(28, 224);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(343, 126);
-            this.textBox3.TabIndex = 4;
+            this.txtSinopse.Location = new System.Drawing.Point(28, 224);
+            this.txtSinopse.Multiline = true;
+            this.txtSinopse.Name = "txtSinopse";
+            this.txtSinopse.Size = new System.Drawing.Size(343, 126);
+            this.txtSinopse.TabIndex = 4;
             // 
-            // checkBox1
+            // checkBoxLocado
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(28, 368);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(60, 17);
-            this.checkBox1.TabIndex = 12;
-            this.checkBox1.Text = "Locado";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxLocado.AutoSize = true;
+            this.checkBoxLocado.Location = new System.Drawing.Point(28, 368);
+            this.checkBoxLocado.Name = "checkBoxLocado";
+            this.checkBoxLocado.Size = new System.Drawing.Size(60, 17);
+            this.checkBoxLocado.TabIndex = 12;
+            this.checkBoxLocado.Text = "Locado";
+            this.checkBoxLocado.UseVisualStyleBackColor = true;
             // 
-            // maskedTextBox1
+            // mtxtDuracao
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(28, 175);
-            this.maskedTextBox1.Mask = "00:00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(343, 21);
-            this.maskedTextBox1.TabIndex = 3;
+            this.mtxtDuracao.Location = new System.Drawing.Point(28, 175);
+            this.mtxtDuracao.Mask = "00:00";
+            this.mtxtDuracao.Name = "mtxtDuracao";
+            this.mtxtDuracao.Size = new System.Drawing.Size(343, 21);
+            this.mtxtDuracao.TabIndex = 3;
             // 
             // pictureBox1
             // 
@@ -167,27 +171,42 @@
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // btnCadastrar
             // 
-            this.button1.Location = new System.Drawing.Point(47, 406);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(662, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Cadastrar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Location = new System.Drawing.Point(28, 406);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(665, 23);
+            this.btnCadastrar.TabIndex = 5;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.Cadastrar_Click);
+            // 
+            // dataGridViewFilmes
+            // 
+            this.dataGridViewFilmes.AllowUserToAddRows = false;
+            this.dataGridViewFilmes.AllowUserToDeleteRows = false;
+            this.dataGridViewFilmes.AutoGenerateColumns = false;
+            this.dataGridViewFilmes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewFilmes.DataSource = this.conexao2BindingSource;
+            this.dataGridViewFilmes.Location = new System.Drawing.Point(28, 461);
+            this.dataGridViewFilmes.Name = "dataGridViewFilmes";
+            this.dataGridViewFilmes.ReadOnly = true;
+            this.dataGridViewFilmes.Size = new System.Drawing.Size(1032, 176);
+            this.dataGridViewFilmes.TabIndex = 15;
             // 
             // FrmTelaFilme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(733, 450);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1226, 686);
+            this.Controls.Add(this.dataGridViewFilmes);
+            this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.mtxtDuracao);
+            this.Controls.Add(this.checkBoxLocado);
+            this.Controls.Add(this.txtSinopse);
+            this.Controls.Add(this.txtNomeFilme);
             this.Controls.Add(this.GeneroComboBox);
             this.Controls.Add(this.CategoriaComboBox);
             this.Controls.Add(this.label7);
@@ -206,6 +225,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.conexao2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFilmes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,12 +241,13 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox CategoriaComboBox;
         private System.Windows.Forms.ComboBox GeneroComboBox;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.TextBox txtNomeFilme;
+        private System.Windows.Forms.TextBox txtSinopse;
+        private System.Windows.Forms.CheckBox checkBoxLocado;
+        private System.Windows.Forms.MaskedTextBox mtxtDuracao;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.BindingSource conexao2BindingSource;
+        private System.Windows.Forms.DataGridView dataGridViewFilmes;
     }
 }
