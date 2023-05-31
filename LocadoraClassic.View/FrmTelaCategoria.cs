@@ -28,6 +28,7 @@ namespace LocadoraClassic.View
 
             categoria.Nome = txtNomeCategoria.Text;
             categoria.ValorDiaria = txtValorDiaria.Text;
+            MessageBox.Show("Valor: " + categoria.ValorDiaria);
 
             categoriaDAL.InserirCategoria(categoria);
             
@@ -44,21 +45,29 @@ namespace LocadoraClassic.View
         }
         private static DataTable GetData(string sqlCommand)
         {
-            Conexao2.Sqlcon.Open();
-            SqlCommand command;
-            SqlDataAdapter adapter = new SqlDataAdapter();
-
-            command = new SqlCommand(sqlCommand, Conexao2.Sqlcon);
-            adapter.InsertCommand = new SqlCommand(sqlCommand, Conexao2.Sqlcon);
-            adapter.InsertCommand.ExecuteNonQuery();
-            command.Dispose();
-            Conexao2.Sqlcon.Close();
-
-            adapter.SelectCommand = command;
             DataTable table = new DataTable();
-            table.Locale = System.Globalization.CultureInfo.InvariantCulture;
-            adapter.Fill(table);
+            try
+            {
+                Conexao2.Sqlcon.Open();
+                SqlCommand command;
+                SqlDataAdapter adapter = new SqlDataAdapter();
 
+                command = new SqlCommand(sqlCommand, Conexao2.Sqlcon);
+                adapter.InsertCommand = new SqlCommand(sqlCommand, Conexao2.Sqlcon);
+                adapter.InsertCommand.ExecuteNonQuery();
+                command.Dispose();
+                Conexao2.Sqlcon.Close();
+
+                adapter.SelectCommand = command;
+                
+                table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+                adapter.Fill(table);
+            }
+            catch (System.InvalidOperationException)
+            {
+                Conexao2.Sqlcon.Close();
+                MessageBox.Show("O sistema perdeu a conexão ao banco de dados");
+            }
             return table;
         }
 
@@ -116,6 +125,7 @@ namespace LocadoraClassic.View
             categoria.Id = id;
             categoria.Nome = txtNomeNovo.Text;
             categoria.ValorDiaria = txtValorNovo.Text;
+            MessageBox.Show("Valor: " + categoria.ValorDiaria);
             categoriaDAL.AlterarCategoria(categoria);
             InitializeDataGridView();
         }

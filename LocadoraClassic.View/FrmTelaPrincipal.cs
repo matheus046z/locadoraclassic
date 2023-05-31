@@ -71,5 +71,12 @@ namespace LocadoraClassic.View
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void conectarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConectarBD frmConectarBD = new FrmConectarBD();
+            frmConectarBD.MdiParent = this;
+            frmConectarBD.Show();
+        }
     }
 }

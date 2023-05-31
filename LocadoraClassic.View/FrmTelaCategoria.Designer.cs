@@ -36,7 +36,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtValorDiaria = new System.Windows.Forms.TextBox();
             this.dataGridViewCategoria = new System.Windows.Forms.DataGridView();
-            this.conexao2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnExcluir = new System.Windows.Forms.Button();
             this.txtNomeSelecionado = new System.Windows.Forms.TextBox();
             this.txtValorSelecionado = new System.Windows.Forms.TextBox();
@@ -47,6 +46,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtValorNovo = new System.Windows.Forms.TextBox();
             this.btnAlterar = new System.Windows.Forms.Button();
+            this.conexao2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCategoria)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.conexao2BindingSource)).BeginInit();
             this.SuspendLayout();
@@ -82,9 +82,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(35, 81);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 13);
+            this.label2.Size = new System.Drawing.Size(217, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Valor da Diária";
+            this.label2.Text = "Valor da Diária (Usar ponto na casa decimal)";
             // 
             // txtValorDiaria
             // 
@@ -110,10 +110,6 @@
             this.dataGridViewCategoria.Size = new System.Drawing.Size(404, 411);
             this.dataGridViewCategoria.TabIndex = 4;
             this.dataGridViewCategoria.SelectionChanged += new System.EventHandler(this.DataGridViewCategoria_SelectionChanged);
-            // 
-            // conexao2BindingSource
-            // 
-            this.conexao2BindingSource.DataSource = typeof(LocadoraClassic.DAL.Conexao2);
             // 
             // btnExcluir
             // 
@@ -206,6 +202,10 @@
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            // 
+            // conexao2BindingSource
+            // 
+            this.conexao2BindingSource.DataSource = typeof(LocadoraClassic.DAL.Conexao2);
             // 
             // FrmTelaCategoria
             // 

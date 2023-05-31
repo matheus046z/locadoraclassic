@@ -50,12 +50,20 @@ namespace LocadoraClassic.View
             DataTable table = new DataTable();
             try
             {
+                //SqlConnection sqlcon;
+                //sqlcon = new SqlConnection(ConexaoBD.ConnectionStringBD);
+                
                 Conexao2.Sqlcon.Open();
-                SqlCommand command;
+                //sqlcon.Open();
+                //SqlCommand command;
                 SqlDataAdapter adapter = new SqlDataAdapter();
 
-                command = new SqlCommand(sqlCommand, Conexao2.Sqlcon);
-                adapter.InsertCommand = new SqlCommand(sqlCommand, Conexao2.Sqlcon);
+                SqlCommand command = new SqlCommand(sqlCommand, Conexao2.Sqlcon);  // Usando a conection string instanciada no Conexao2 -> Conexao2.Sqlcon
+                adapter.InsertCommand = command;
+
+                //command = new SqlCommand(sqlCommand, sqlcon); // Usando a connection string local do metodo -> sqlcon
+                //adapter.InsertCommand = command;
+
                 adapter.InsertCommand.ExecuteNonQuery();
                 command.Dispose();
                 Conexao2.Sqlcon.Close();

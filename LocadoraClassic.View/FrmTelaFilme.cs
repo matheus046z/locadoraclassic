@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -53,15 +54,9 @@ namespace LocadoraClassic.View
             filme.Nome = txtNomeFilme.Text;
             filme.Duracao = mtxtDuracao.Text;
             filme.Sinopse = txtSinopse.Text;
-            //filme.IdCategoria = Convert.ToInt32(CategoriaComboBox.ValueMember);
-            //filme.IdGenero = Convert.ToInt32(GeneroComboBox.ValueMember);
-
             filme.IdCategoria = Convert.ToInt32(CategoriaComboBox.SelectedValue);
             filme.IdGenero = Convert.ToInt32(GeneroComboBox.SelectedValue);
-            //filme.Banner =
-
-            MessageBox.Show("Categoria - Id " + filme.IdCategoria);
-            MessageBox.Show("Genero - Id: " + filme.IdGenero);
+            filme.URLbanner = txtURL.Text;
 
             filmeDAL.InserirFilme(filme);
 
@@ -109,5 +104,23 @@ namespace LocadoraClassic.View
             return table;
         }
 
+        private void txtURL_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                var request = WebRequest.Create(txtURL.Text);
+
+                using (var response = request.GetResponse())
+                using (var stream = response.GetResponseStream())
+                {
+                    pictureBoxBanner.Image = Bitmap.FromStream(stream);
+                }
+            }
+
+            catch (System.UriFormatException)
+            {
+
+            }
+        }
     }
 }

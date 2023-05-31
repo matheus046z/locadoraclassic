@@ -37,18 +37,20 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.CategoriaComboBox = new System.Windows.Forms.ComboBox();
-            this.conexao2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.GeneroComboBox = new System.Windows.Forms.ComboBox();
             this.txtNomeFilme = new System.Windows.Forms.TextBox();
             this.txtSinopse = new System.Windows.Forms.TextBox();
             this.checkBoxLocado = new System.Windows.Forms.CheckBox();
             this.mtxtDuracao = new System.Windows.Forms.MaskedTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBanner = new System.Windows.Forms.PictureBox();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.dataGridViewFilmes = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.conexao2BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.conexao2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtURL = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBanner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFilmes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.conexao2BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -99,7 +101,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(400, 20);
+            this.label7.Location = new System.Drawing.Point(651, 20);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 13);
             this.label7.TabIndex = 6;
@@ -107,25 +109,19 @@
             // 
             // CategoriaComboBox
             // 
-            this.CategoriaComboBox.DataSource = this.conexao2BindingSource;
             this.CategoriaComboBox.FormattingEnabled = true;
             this.CategoriaComboBox.Location = new System.Drawing.Point(28, 36);
             this.CategoriaComboBox.Name = "CategoriaComboBox";
-            this.CategoriaComboBox.Size = new System.Drawing.Size(343, 21);
+            this.CategoriaComboBox.Size = new System.Drawing.Size(568, 21);
             this.CategoriaComboBox.TabIndex = 0;
             this.CategoriaComboBox.Click += new System.EventHandler(this.CategoriaComboBox_Click);
             // 
-            // conexao2BindingSource
-            // 
-            this.conexao2BindingSource.DataSource = typeof(LocadoraClassic.DAL.Conexao2);
-            // 
             // GeneroComboBox
             // 
-            this.GeneroComboBox.DataSource = this.conexao2BindingSource;
             this.GeneroComboBox.FormattingEnabled = true;
             this.GeneroComboBox.Location = new System.Drawing.Point(28, 76);
             this.GeneroComboBox.Name = "GeneroComboBox";
-            this.GeneroComboBox.Size = new System.Drawing.Size(121, 21);
+            this.GeneroComboBox.Size = new System.Drawing.Size(568, 21);
             this.GeneroComboBox.TabIndex = 1;
             this.GeneroComboBox.Click += new System.EventHandler(this.GeneroComboBox_Click);
             // 
@@ -133,7 +129,7 @@
             // 
             this.txtNomeFilme.Location = new System.Drawing.Point(28, 129);
             this.txtNomeFilme.Name = "txtNomeFilme";
-            this.txtNomeFilme.Size = new System.Drawing.Size(343, 21);
+            this.txtNomeFilme.Size = new System.Drawing.Size(568, 21);
             this.txtNomeFilme.TabIndex = 2;
             // 
             // txtSinopse
@@ -141,13 +137,13 @@
             this.txtSinopse.Location = new System.Drawing.Point(28, 224);
             this.txtSinopse.Multiline = true;
             this.txtSinopse.Name = "txtSinopse";
-            this.txtSinopse.Size = new System.Drawing.Size(343, 126);
+            this.txtSinopse.Size = new System.Drawing.Size(568, 126);
             this.txtSinopse.TabIndex = 4;
             // 
             // checkBoxLocado
             // 
             this.checkBoxLocado.AutoSize = true;
-            this.checkBoxLocado.Location = new System.Drawing.Point(28, 368);
+            this.checkBoxLocado.Location = new System.Drawing.Point(28, 401);
             this.checkBoxLocado.Name = "checkBoxLocado";
             this.checkBoxLocado.Size = new System.Drawing.Size(60, 17);
             this.checkBoxLocado.TabIndex = 12;
@@ -159,23 +155,24 @@
             this.mtxtDuracao.Location = new System.Drawing.Point(28, 175);
             this.mtxtDuracao.Mask = "00:00";
             this.mtxtDuracao.Name = "mtxtDuracao";
-            this.mtxtDuracao.Size = new System.Drawing.Size(343, 21);
+            this.mtxtDuracao.Size = new System.Drawing.Size(568, 21);
             this.mtxtDuracao.TabIndex = 3;
             // 
-            // pictureBox1
+            // pictureBoxBanner
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(403, 36);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(290, 314);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxBanner.Location = new System.Drawing.Point(654, 37);
+            this.pictureBoxBanner.MaximumSize = new System.Drawing.Size(300, 410);
+            this.pictureBoxBanner.Name = "pictureBoxBanner";
+            this.pictureBoxBanner.Size = new System.Drawing.Size(300, 410);
+            this.pictureBoxBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxBanner.TabIndex = 14;
+            this.pictureBoxBanner.TabStop = false;
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(28, 406);
+            this.btnCadastrar.Location = new System.Drawing.Point(28, 424);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(665, 23);
+            this.btnCadastrar.Size = new System.Drawing.Size(568, 23);
             this.btnCadastrar.TabIndex = 5;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
@@ -188,11 +185,32 @@
             this.dataGridViewFilmes.AutoGenerateColumns = false;
             this.dataGridViewFilmes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewFilmes.DataSource = this.conexao2BindingSource;
-            this.dataGridViewFilmes.Location = new System.Drawing.Point(28, 461);
+            this.dataGridViewFilmes.Location = new System.Drawing.Point(28, 473);
             this.dataGridViewFilmes.Name = "dataGridViewFilmes";
             this.dataGridViewFilmes.ReadOnly = true;
-            this.dataGridViewFilmes.Size = new System.Drawing.Size(1032, 176);
+            this.dataGridViewFilmes.Size = new System.Drawing.Size(926, 176);
             this.dataGridViewFilmes.TabIndex = 15;
+            // 
+            // conexao2BindingSource
+            // 
+            this.conexao2BindingSource.DataSource = typeof(LocadoraClassic.DAL.Conexao2);
+            // 
+            // txtURL
+            // 
+            this.txtURL.Location = new System.Drawing.Point(28, 375);
+            this.txtURL.Name = "txtURL";
+            this.txtURL.Size = new System.Drawing.Size(568, 21);
+            this.txtURL.TabIndex = 16;
+            this.txtURL.TextChanged += new System.EventHandler(this.txtURL_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(28, 357);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(132, 13);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "URL da imagem do banner";
             // 
             // FrmTelaFilme
             // 
@@ -200,9 +218,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1226, 686);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtURL);
             this.Controls.Add(this.dataGridViewFilmes);
             this.Controls.Add(this.btnCadastrar);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBoxBanner);
             this.Controls.Add(this.mtxtDuracao);
             this.Controls.Add(this.checkBoxLocado);
             this.Controls.Add(this.txtSinopse);
@@ -223,9 +243,9 @@
             this.Text = "Cadastro de Filme";
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.conexao2BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBanner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFilmes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.conexao2BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,9 +265,11 @@
         private System.Windows.Forms.TextBox txtSinopse;
         private System.Windows.Forms.CheckBox checkBoxLocado;
         private System.Windows.Forms.MaskedTextBox mtxtDuracao;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxBanner;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.BindingSource conexao2BindingSource;
         private System.Windows.Forms.DataGridView dataGridViewFilmes;
+        private System.Windows.Forms.TextBox txtURL;
+        private System.Windows.Forms.Label label6;
     }
 }

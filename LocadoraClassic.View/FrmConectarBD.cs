@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using LocadoraClassic.DAL;
 using LocadoraClassic.VO;
 
 namespace LocadoraClassic.View
@@ -24,22 +25,22 @@ namespace LocadoraClassic.View
             login.InitialCatalog = txtInitialCatalog.Text;
 
             concatenarString = "Initial Catalog="+login.InitialCatalog+";User ID="+login.UserID+";Password="+login.Password+";Server="+login.Server;
-            //MessageBox.Show(concatenarString);
-
             ConexaoBD.ConnectionStringBD = concatenarString;
-            //MessageBox.Show(ConexaoBD.ConnectionStringBD);
-
+ 
             connectionString = concatenarString;
+            
             sqlcon = new SqlConnection(connectionString);
+            Conexao2.Sqlcon.ConnectionString = ConexaoBD.ConnectionStringBD; // instancia a connection string no Conexao2
 
             try
             {
                 sqlcon.Open();
+                
                 MessageBox.Show("Conectado!");
                 sqlcon.Close();
-                //this.Hide(); // Oculta a tela de login do servidor
-                fmrMenu frmTelaPrincipal = new fmrMenu();
-                frmTelaPrincipal.Show();
+                Hide(); // Oculta a tela de login do servidor
+                //fmrMenu frmTelaPrincipal = new fmrMenu();
+                //frmTelaPrincipal.Show();
             }
             catch (System.Data.SqlClient.SqlException)
             {

@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTelaLocacao));
             this.label1 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.mtxtCPF = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCliente = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -66,13 +66,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "CPF";
             // 
-            // maskedTextBox1
+            // mtxtCPF
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(9, 33);
-            this.maskedTextBox1.Mask = "000.000.000-00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(98, 21);
-            this.maskedTextBox1.TabIndex = 1;
+            this.mtxtCPF.Location = new System.Drawing.Point(9, 33);
+            this.mtxtCPF.Mask = "000.000.000-00";
+            this.mtxtCPF.Name = "mtxtCPF";
+            this.mtxtCPF.Size = new System.Drawing.Size(98, 21);
+            this.mtxtCPF.TabIndex = 1;
             // 
             // label2
             // 
@@ -83,20 +83,20 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Cliente";
             // 
-            // textBox1
+            // txtCliente
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(166, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(317, 21);
-            this.textBox1.TabIndex = 32;
+            this.txtCliente.Enabled = false;
+            this.txtCliente.Location = new System.Drawing.Point(166, 33);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.Size = new System.Drawing.Size(317, 21);
+            this.txtCliente.TabIndex = 2;
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.maskedTextBox1);
+            this.groupBox1.Controls.Add(this.txtCliente);
+            this.groupBox1.Controls.Add(this.mtxtCPF);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
@@ -304,9 +304,9 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox mtxtCPF;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button1;
