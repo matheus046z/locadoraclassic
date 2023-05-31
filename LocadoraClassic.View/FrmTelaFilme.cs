@@ -25,7 +25,11 @@ namespace LocadoraClassic.View
 
         private void CategoriaComboBox_Click(object sender, EventArgs e)
         {
-            CategoriaComboBox.DataSource = CategoriaDAL.ValoresComboBoxCategoria();
+            if (Convert.ToInt32(CategoriaComboBox.SelectedIndex) <= 0)
+            {
+                CategoriaComboBox.DataSource = CategoriaDAL.ValoresComboBoxCategoria();
+            }
+                
             CategoriaComboBox.DisplayMember = "nome";
             CategoriaComboBox.ValueMember = "Id_categoria";
              
@@ -33,7 +37,10 @@ namespace LocadoraClassic.View
 
         private void GeneroComboBox_Click(object sender, EventArgs e)
         {
-            GeneroComboBox.DataSource = GeneroDAL.ValoresComboBoxGenero();
+            if (Convert.ToInt32(GeneroComboBox.SelectedIndex) <= 0)
+            {
+                GeneroComboBox.DataSource = GeneroDAL.ValoresComboBoxGenero();
+            }
             GeneroComboBox.DisplayMember = "nome";
             GeneroComboBox.ValueMember = "Id_genero";   
         }
@@ -59,6 +66,7 @@ namespace LocadoraClassic.View
             filme.URLbanner = txtURL.Text;
 
             filmeDAL.InserirFilme(filme);
+            InitializeDataGridView();
 
         }
         private void InitializeDataGridView()
@@ -121,6 +129,40 @@ namespace LocadoraClassic.View
             {
 
             }
+        }
+        public void DataGridViewFilmes_SelectionChanged(object sender, EventArgs e)
+        {
+            Filme filme = new Filme();
+            int id = 0;
+
+            if (dataGridViewFilmes.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataGridViewFilmes.SelectedRows[0];
+                id = Convert.ToInt32(selectedRow.Cells["Id_filme"].Value);
+                //MessageBox.Show("O 'id' a ser alterado é: " + id.ToString());
+                filme.Id = id;
+                txtSelecao.Text = filme.Id.ToString(); 
+            }
+            // MessageBox.Show(generoDAL.BuscarGenero(genero));
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            Filme filme = new Filme();
+            FilmeDAL filmeDAL = new FilmeDAL();
+
+            int id = 0;
+
+            if (dataGridViewFilmes.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataGridViewFilmes.SelectedRows[0];
+                id = Convert.ToInt32(selectedRow.Cells["Id_filme"].Value);
+                //MessageBox.Show("O 'id' a ser alterado é: " + id.ToString());
+                filme.Id = id;
+                txtSelecao.Text = filme.Id.ToString();
+            }
+            filmeDAL.DeletarFilme(filme);
+            InitializeDataGridView();
         }
     }
 }

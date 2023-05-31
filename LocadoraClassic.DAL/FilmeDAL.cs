@@ -23,5 +23,16 @@ namespace LocadoraClassic.DAL
             command.Dispose();
             Conexao2.Sqlcon.Close();
         }
+        public void DeletarFilme(Filme filme)
+        {
+            Conexao2.Sqlcon.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            string sql = "DELETE FROM filmes WHERE Id_filme=" + filme.Id;
+            SqlCommand command = new SqlCommand(sql, Conexao2.Sqlcon);
+            adapter.InsertCommand = command;
+            adapter.InsertCommand.ExecuteNonQuery();
+            command.Dispose();
+            Conexao2.Sqlcon.Close();
+        }
     }
 }

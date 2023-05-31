@@ -35,16 +35,19 @@ namespace LocadoraClassic.View
 
                     MessageBox.Show(cliente.Nome + " inserido no banco de dados!");
                     InitializeDataGridView();
+                    Conexao2.Sqlcon.Close();
                 }
                 else
                 {
                     MessageBox.Show("Cpf inválido!");
+                    Conexao2.Sqlcon.Close();
                 }
             }
 
             catch (System.Data.SqlClient.SqlException)
             {
-                MessageBox.Show("ERRO: Verifique se o CPF já foi cadastrado");
+                MessageBox.Show("ERRO: Verifique se o CPF ou RG já foram cadastrados");
+                Conexao2.Sqlcon.Close();
             }
         }
 
@@ -99,7 +102,7 @@ namespace LocadoraClassic.View
             if (dataGridViewClientes.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = dataGridViewClientes.SelectedRows[0];
-                id = Convert.ToInt32(selectedRow.Cells["id"].Value);
+                id = Convert.ToInt32(selectedRow.Cells["id_clientes"].Value);
                 MessageBox.Show("O valor do campo 'id' a ser excluido é: " + id.ToString());
             }
             Cliente cliente = new Cliente();

@@ -89,6 +89,7 @@ namespace LocadoraClassic.DAL
             adapter.Fill(dt);
             command.Dispose();
             Conexao2.Sqlcon.Close();
+            
             return dt;
         }
     }

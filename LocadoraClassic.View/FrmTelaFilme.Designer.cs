@@ -48,6 +48,9 @@
             this.conexao2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtURL = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtSelecao = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnExcluir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBanner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFilmes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.conexao2BindingSource)).BeginInit();
@@ -190,6 +193,7 @@
             this.dataGridViewFilmes.ReadOnly = true;
             this.dataGridViewFilmes.Size = new System.Drawing.Size(926, 176);
             this.dataGridViewFilmes.TabIndex = 15;
+            this.dataGridViewFilmes.SelectionChanged += new System.EventHandler(this.DataGridViewFilmes_SelectionChanged);
             // 
             // conexao2BindingSource
             // 
@@ -212,12 +216,44 @@
             this.label6.TabIndex = 17;
             this.label6.Text = "URL da imagem do banner";
             // 
+            // txtSelecao
+            // 
+            this.txtSelecao.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtSelecao.Enabled = false;
+            this.txtSelecao.Location = new System.Drawing.Point(28, 672);
+            this.txtSelecao.Name = "txtSelecao";
+            this.txtSelecao.Size = new System.Drawing.Size(60, 21);
+            this.txtSelecao.TabIndex = 18;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Tahoma", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(26, 658);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(64, 11);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Id selecionado";
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Location = new System.Drawing.Point(94, 670);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluir.TabIndex = 20;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
             // FrmTelaFilme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1226, 686);
+            this.ClientSize = new System.Drawing.Size(1226, 699);
+            this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtSelecao);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtURL);
             this.Controls.Add(this.dataGridViewFilmes);
@@ -271,5 +307,8 @@
         private System.Windows.Forms.DataGridView dataGridViewFilmes;
         private System.Windows.Forms.TextBox txtURL;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtSelecao;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnExcluir;
     }
 }
