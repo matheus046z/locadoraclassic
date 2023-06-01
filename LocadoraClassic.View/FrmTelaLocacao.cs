@@ -1,17 +1,11 @@
 ﻿using LocadoraClassic.DAL;
 using LocadoraClassic.VO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LocadoraClassic.View
 {
@@ -30,40 +24,45 @@ namespace LocadoraClassic.View
         }
         private void CategoriaComboBox_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(CategoriaComboBox.SelectedIndex) <= 0)
+            if (CategoriaComboBox.DataSource == null)
             {
                 CategoriaComboBox.DataSource = CategoriaDAL.ValoresComboBoxCategoria();
+                //MessageBox.Show("Pegou do valores da categoria no Banco");
+                CategoriaComboBox.DisplayMember = "nome_categoria";
+                CategoriaComboBox.ValueMember = "Id_categoria";
+                CategoriaComboBox.SelectedIndex = -1;
             }
-
-            CategoriaComboBox.DisplayMember = "nome";
-            CategoriaComboBox.ValueMember = "Id_categoria";
-            InitializeDataGridView();
         }
 
         private void GeneroComboBox_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(GeneroComboBox.SelectedIndex) <= 0)
+            if (GeneroComboBox.DataSource == null)
             {
                 GeneroComboBox.DataSource = GeneroDAL.ValoresComboBoxGenero();
-            }
-
-            GeneroComboBox.DisplayMember = "nome";
-            GeneroComboBox.ValueMember = "Id_genero";
+                //MessageBox.Show("Pegou do valores do genero no Banco");
+                GeneroComboBox.DisplayMember = "nome_genero";
+                GeneroComboBox.ValueMember = "Id_genero";
+                GeneroComboBox.SelectedIndex = -1;
+            }    
+        }
+        private void SelectedIndexChanged_GeneroCategoria(object sender, EventArgs e)
+        {
             InitializeDataGridView();
         }
+
+
         private void InitializeDataGridView()
         {
-            if (Convert.ToInt32(GeneroComboBox.SelectedValue) > 0 & Convert.ToInt32(GeneroComboBox.SelectedValue) > 0)
+            if (GeneroComboBox.SelectedValue != null & CategoriaComboBox.SelectedValue != null)
             {
                 dataGridViewBusca.AutoGenerateColumns = true;
-                //MessageBox.Show("Genero: " + GeneroComboBox.SelectedValue + "\n Categoria: " + CategoriaComboBox.SelectedValue);
-                //MessageBox.Show("SELECT * FROM filmes WHERE Id_filme_genero = " + GeneroComboBox.SelectedValue + "AND Id_filme_categoria = " + CategoriaComboBox.SelectedValue);
+                //MessageBox.Show("SELECT * FROM filmes WHERE Id_filme_genero = " + GeneroComboBox.SelectedValue + " AND Id_filme_categoria = " + CategoriaComboBox.SelectedValue);
                 conexao2BindingSource.DataSource = GetData("SELECT * FROM filmes WHERE Id_filme_genero = " + GeneroComboBox.SelectedValue + " AND Id_filme_categoria = " + CategoriaComboBox.SelectedValue);
                 dataGridViewBusca.DataSource = conexao2BindingSource;
-
                 dataGridViewBusca.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
                 dataGridViewBusca.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
+                
         }
         private static DataTable GetData(string sqlCommand)
         {
@@ -99,24 +98,54 @@ namespace LocadoraClassic.View
             Filme filme = new Filme();
             //FilmeDAL filmeDAL = new FilmeDAL();
             int id = 0;
+            DataGridViewRow selectedRow = null;
 
             if (dataGridViewBusca.SelectedRows.Count > 0)
             {
                 try
                 {
-                    DataGridViewRow selectedRow = dataGridViewBusca.SelectedRows[0];
+                    selectedRow = dataGridViewBusca.SelectedRows[0];
                     id = Convert.ToInt32(selectedRow.Cells["Id_filme"].Value);
                     //MessageBox.Show("O 'id' a ser alterado é: " + id.ToString());
                     filme.Id = id;
-                    txtNomeDoFilmeSelecionado.Text = selectedRow.Cells["nome"].Value.ToString();
+                    txtNomeDoFilmeSelecionado.Text = selectedRow.Cells["nome_filme"].Value.ToString();
+                    string URLbanner = selectedRow.Cells["banner"].Value.ToString();
+                    
+                    var request = WebRequest.Create(URLbanner);
+
+                    using (var response = request.GetResponse())
+                    using (var stream = response.GetResponseStream())
+                    {
+                        pictureBoxBanner.Image = Bitmap.FromStream(stream);
+                    }
+
                 }
 
                 catch (System.InvalidCastException)
                 {
-
+                    selectedRow = null;
                 }
+                catch (System.UriFormatException) { }
+                catch (System.Net.WebException) { }
             }
         }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            CategoriaComboBox.SelectedIndex = -1;
+            GeneroComboBox.SelectedIndex = -1;
+
+        }
+
+        private void btnBuscarTodos_Click(object sender, EventArgs e)
+        {
+            dataGridViewBusca.AutoGenerateColumns = true;
+            conexao2BindingSource.DataSource = GetData("SELECT * FROM filmes");
+            dataGridViewBusca.DataSource = conexao2BindingSource;
+            dataGridViewBusca.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewBusca.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
         //private void dataGridViewBusca_CellContentClick(object sender, DataGridViewCellEventArgs e)
         //{
 

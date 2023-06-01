@@ -11,7 +11,7 @@ namespace LocadoraClassic.DAL
         {
             Conexao2.Sqlcon.Open();
             SqlDataAdapter adapter = new SqlDataAdapter();
-            string sql = "INSERT INTO clientes(nome,endereco,telefone,cpf,rg) VALUES('" + cliente.Nome + "','" + cliente.Endereco + "','" + cliente.Telefone + "','" + cliente.Cpf + "','" + cliente.Rg + "')";
+            string sql = "INSERT INTO clientes(nome_cliente,endereco,telefone,cpf,rg) VALUES('" + cliente.Nome + "','" + cliente.Endereco + "','" + cliente.Telefone + "','" + cliente.Cpf + "','" + cliente.Rg + "')";
 
             SqlCommand command = new SqlCommand(sql, Conexao2.Sqlcon);
             adapter.InsertCommand = command;
@@ -40,7 +40,7 @@ namespace LocadoraClassic.DAL
             Conexao2.Sqlcon.Open();
             SqlCommand command;
             SqlDataAdapter adapter = new SqlDataAdapter();
-            string sql = "SELECT nome FROM clientes WHERE cpf=" + "'" + cliente.Cpf + "'";
+            string sql = "SELECT nome_cliente FROM clientes WHERE cpf=" + "'" + cliente.Cpf + "'";
             command = new SqlCommand(sql, Conexao2.Sqlcon);
             adapter.InsertCommand = new SqlCommand(sql, Conexao2.Sqlcon);
             adapter.InsertCommand.ExecuteNonQuery();

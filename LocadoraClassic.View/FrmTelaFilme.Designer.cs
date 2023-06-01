@@ -51,6 +51,7 @@
             this.txtSelecao = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnExcluir = new System.Windows.Forms.Button();
+            this.mySqlCommandBuilder1 = new MySqlConnector.MySqlCommandBuilder();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBanner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFilmes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.conexao2BindingSource)).BeginInit();
@@ -245,6 +246,12 @@
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
+            // mySqlCommandBuilder1
+            // 
+            this.mySqlCommandBuilder1.DataAdapter = null;
+            this.mySqlCommandBuilder1.QuotePrefix = "`";
+            this.mySqlCommandBuilder1.QuoteSuffix = "`";
+            // 
             // FrmTelaFilme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -310,5 +317,6 @@
         private System.Windows.Forms.TextBox txtSelecao;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnExcluir;
+        private MySqlConnector.MySqlCommandBuilder mySqlCommandBuilder1;
     }
 }

@@ -16,7 +16,7 @@ namespace LocadoraClassic.DAL
             SqlCommand command;
             SqlDataAdapter adapter = new SqlDataAdapter();
             string sql = "";
-            sql = "INSERT INTO categoria(nome, valordiaria) VALUES('" + categoria.Nome + "', '" + categoria.ValorDiaria + "')";
+            sql = "INSERT INTO categoria(nome_categoria, valordiaria) VALUES('" + categoria.Nome + "', '" + categoria.ValorDiaria + "')";
 
             command = new SqlCommand(sql, Conexao2.Sqlcon);
             adapter.InsertCommand = command;
@@ -33,7 +33,7 @@ namespace LocadoraClassic.DAL
             Conexao2.Sqlcon.Open();
             SqlCommand command;
             SqlDataAdapter adapter = new SqlDataAdapter();
-            string sql = "SELECT nome,valordiaria FROM categoria WHERE Id_categoria=" + categoria.Id;
+            string sql = "SELECT nome_categoria,valordiaria FROM categoria WHERE Id_categoria=" + categoria.Id;
             command = new SqlCommand(sql, Conexao2.Sqlcon);
             adapter.InsertCommand = new SqlCommand(sql, Conexao2.Sqlcon);
             adapter.InsertCommand.ExecuteNonQuery();
@@ -65,7 +65,7 @@ namespace LocadoraClassic.DAL
             Conexao2.Sqlcon.Open();
             SqlCommand command;
             SqlDataAdapter adapter = new SqlDataAdapter();
-            string sql = "UPDATE categoria SET nome = '" + categoria.Nome + "', valordiaria = '" + categoria.ValorDiaria + "' WHERE Id_categoria = " + categoria.Id;
+            string sql = "UPDATE categoria SET nome_categoria = '" + categoria.Nome + "', valordiaria = '" + categoria.ValorDiaria + "' WHERE Id_categoria = " + categoria.Id;
             command = new SqlCommand(sql, Conexao2.Sqlcon);
             adapter.InsertCommand = new SqlCommand(sql, Conexao2.Sqlcon);
             adapter.InsertCommand.ExecuteNonQuery();
@@ -79,7 +79,7 @@ namespace LocadoraClassic.DAL
             Conexao2.Sqlcon.Open();
             SqlCommand command;
             SqlDataAdapter adapter = new SqlDataAdapter();
-            string sql = "SELECT Id_categoria,nome FROM categoria";
+            string sql = "SELECT Id_categoria,nome_categoria FROM categoria";
             //sql = "";
             command = new SqlCommand(sql, Conexao2.Sqlcon);
             adapter.InsertCommand = new SqlCommand(sql, Conexao2.Sqlcon);

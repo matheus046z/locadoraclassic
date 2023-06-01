@@ -36,8 +36,10 @@
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnBuscarTodos = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
             this.txtNomeDoFilmeSelecionado = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnConfirmar = new System.Windows.Forms.Button();
             this.dataGridViewBusca = new System.Windows.Forms.DataGridView();
             this.conexao2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
@@ -53,12 +55,13 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.pictureBoxBanner = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBusca)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.conexao2BindingSource)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBanner)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -106,7 +109,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(695, 77);
+            this.groupBox1.Size = new System.Drawing.Size(979, 77);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Busca de Cliente por CPF";
@@ -114,9 +117,10 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox2.Controls.Add(this.btnBuscarTodos);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.txtNomeDoFilmeSelecionado);
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.btnConfirmar);
             this.groupBox2.Controls.Add(this.dataGridViewBusca);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.GeneroComboBox);
@@ -125,10 +129,29 @@
             this.groupBox2.Controls.Add(this.CategoriaComboBox);
             this.groupBox2.Location = new System.Drawing.Point(12, 95);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(695, 295);
+            this.groupBox2.Size = new System.Drawing.Size(979, 295);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Busca de Filme por Nome";
+            // 
+            // btnBuscarTodos
+            // 
+            this.btnBuscarTodos.Location = new System.Drawing.Point(850, 37);
+            this.btnBuscarTodos.Name = "btnBuscarTodos";
+            this.btnBuscarTodos.Size = new System.Drawing.Size(123, 23);
+            this.btnBuscarTodos.TabIndex = 8;
+            this.btnBuscarTodos.Text = "Buscar em todos";
+            this.btnBuscarTodos.UseVisualStyleBackColor = true;
+            this.btnBuscarTodos.Click += new System.EventHandler(this.btnBuscarTodos_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(9, 63);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(86, 13);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Selecione o filme";
             // 
             // txtNomeDoFilmeSelecionado
             // 
@@ -136,27 +159,32 @@
             this.txtNomeDoFilmeSelecionado.Enabled = false;
             this.txtNomeDoFilmeSelecionado.Location = new System.Drawing.Point(12, 261);
             this.txtNomeDoFilmeSelecionado.Name = "txtNomeDoFilmeSelecionado";
-            this.txtNomeDoFilmeSelecionado.Size = new System.Drawing.Size(251, 21);
+            this.txtNomeDoFilmeSelecionado.Size = new System.Drawing.Size(522, 21);
             this.txtNomeDoFilmeSelecionado.TabIndex = 5;
             // 
-            // button1
+            // btnConfirmar
             // 
-            this.button1.Location = new System.Drawing.Point(271, 261);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(418, 21);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Confirmar Filme";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Location = new System.Drawing.Point(555, 261);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(418, 21);
+            this.btnConfirmar.TabIndex = 6;
+            this.btnConfirmar.Text = "Confirmar Filme";
+            this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // dataGridViewBusca
             // 
+            this.dataGridViewBusca.AllowUserToAddRows = false;
+            this.dataGridViewBusca.AllowUserToDeleteRows = false;
+            this.dataGridViewBusca.AllowUserToOrderColumns = true;
             this.dataGridViewBusca.AutoGenerateColumns = false;
             this.dataGridViewBusca.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridViewBusca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewBusca.DataSource = this.conexao2BindingSource;
-            this.dataGridViewBusca.Location = new System.Drawing.Point(12, 89);
+            this.dataGridViewBusca.Location = new System.Drawing.Point(12, 79);
             this.dataGridViewBusca.Name = "dataGridViewBusca";
-            this.dataGridViewBusca.Size = new System.Drawing.Size(677, 153);
+            this.dataGridViewBusca.ReadOnly = true;
+            this.dataGridViewBusca.Size = new System.Drawing.Size(961, 153);
             this.dataGridViewBusca.TabIndex = 5;
             this.dataGridViewBusca.SelectionChanged += new System.EventHandler(this.DataGridViewBusca_SelectionChanged);
             // 
@@ -180,7 +208,8 @@
             this.GeneroComboBox.Name = "GeneroComboBox";
             this.GeneroComboBox.Size = new System.Drawing.Size(231, 21);
             this.GeneroComboBox.TabIndex = 4;
-            this.CategoriaComboBox.Click += new System.EventHandler(this.GeneroComboBox_Click);
+            this.GeneroComboBox.SelectedIndexChanged += new System.EventHandler(this.SelectedIndexChanged_GeneroCategoria);
+            this.GeneroComboBox.Click += new System.EventHandler(this.GeneroComboBox_Click);
             // 
             // label4
             // 
@@ -207,6 +236,7 @@
             this.CategoriaComboBox.Name = "CategoriaComboBox";
             this.CategoriaComboBox.Size = new System.Drawing.Size(222, 21);
             this.CategoriaComboBox.TabIndex = 3;
+            this.CategoriaComboBox.SelectedIndexChanged += new System.EventHandler(this.SelectedIndexChanged_GeneroCategoria);
             this.CategoriaComboBox.Click += new System.EventHandler(this.CategoriaComboBox_Click);
             // 
             // groupBox3
@@ -221,7 +251,7 @@
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Location = new System.Drawing.Point(12, 396);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(695, 134);
+            this.groupBox3.Size = new System.Drawing.Size(979, 134);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Locação";
@@ -229,7 +259,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(236, 75);
+            this.label9.Location = new System.Drawing.Point(416, 75);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(21, 13);
             this.label9.TabIndex = 6;
@@ -251,7 +281,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(526, 25);
+            this.button2.Location = new System.Drawing.Point(825, 25);
             this.button2.Margin = new System.Windows.Forms.Padding(1);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(136, 33);
@@ -261,22 +291,22 @@
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(258, 37);
+            this.dateTimePicker2.Location = new System.Drawing.Point(419, 37);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(225, 21);
+            this.dateTimePicker2.Size = new System.Drawing.Size(372, 21);
             this.dateTimePicker2.TabIndex = 3;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(6, 37);
+            this.dateTimePicker1.Location = new System.Drawing.Point(12, 37);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(225, 21);
+            this.dateTimePicker1.Size = new System.Drawing.Size(384, 21);
             this.dateTimePicker1.TabIndex = 2;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(255, 21);
+            this.label7.Location = new System.Drawing.Point(416, 21);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(98, 13);
             this.label7.TabIndex = 1;
@@ -285,32 +315,35 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 21);
+            this.label6.Location = new System.Drawing.Point(9, 21);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 13);
             this.label6.TabIndex = 0;
             this.label6.Text = "Data da Locação";
             // 
-            // label10
+            // pictureBoxBanner
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(9, 73);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(86, 13);
-            this.label10.TabIndex = 7;
-            this.label10.Text = "Selecione o filme";
+            this.pictureBoxBanner.Location = new System.Drawing.Point(1014, 12);
+            this.pictureBoxBanner.MaximumSize = new System.Drawing.Size(323, 518);
+            this.pictureBoxBanner.Name = "pictureBoxBanner";
+            this.pictureBoxBanner.Size = new System.Drawing.Size(323, 518);
+            this.pictureBoxBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxBanner.TabIndex = 7;
+            this.pictureBoxBanner.TabStop = false;
             // 
             // FrmTelaLocacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 542);
+            this.ClientSize = new System.Drawing.Size(1380, 637);
+            this.Controls.Add(this.pictureBoxBanner);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimizeBox = false;
             this.Name = "FrmTelaLocacao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Locar Filme";
@@ -324,6 +357,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.conexao2BindingSource)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBanner)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -336,7 +370,7 @@
         private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtNomeDoFilmeSelecionado;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.DataGridView dataGridViewBusca;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox GeneroComboBox;
@@ -354,5 +388,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.BindingSource conexao2BindingSource;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnBuscarTodos;
+        private System.Windows.Forms.PictureBox pictureBoxBanner;
     }
 }

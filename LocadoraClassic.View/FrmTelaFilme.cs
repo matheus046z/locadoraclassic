@@ -1,15 +1,10 @@
 ﻿using LocadoraClassic.DAL;
 using LocadoraClassic.VO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -25,24 +20,24 @@ namespace LocadoraClassic.View
 
         private void CategoriaComboBox_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(CategoriaComboBox.SelectedIndex) <= 0)
+            if (CategoriaComboBox.DataSource == null)
             {
                 CategoriaComboBox.DataSource = CategoriaDAL.ValoresComboBoxCategoria();
-            }
-                
-            CategoriaComboBox.DisplayMember = "nome";
-            CategoriaComboBox.ValueMember = "Id_categoria";
-             
+                CategoriaComboBox.DisplayMember = "nome_categoria";
+                CategoriaComboBox.ValueMember = "Id_categoria";
+                CategoriaComboBox.SelectedIndex = -1;
+            }                
         }
 
         private void GeneroComboBox_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(GeneroComboBox.SelectedIndex) <= 0)
+            if (GeneroComboBox.DataSource == null)
             {
                 GeneroComboBox.DataSource = GeneroDAL.ValoresComboBoxGenero();
+                GeneroComboBox.DisplayMember = "nome_genero";
+                GeneroComboBox.ValueMember = "Id_genero";
+                GeneroComboBox.SelectedIndex = -1;
             }
-            GeneroComboBox.DisplayMember = "nome";
-            GeneroComboBox.ValueMember = "Id_genero";   
         }
 
         private void Cadastrar_Click(object sender, EventArgs e)
@@ -124,11 +119,8 @@ namespace LocadoraClassic.View
                     pictureBoxBanner.Image = Bitmap.FromStream(stream);
                 }
             }
-
-            catch (System.UriFormatException)
-            {
-
-            }
+            catch (System.UriFormatException) { }
+            catch (System.Net.WebException) { }
         }
         public void DataGridViewFilmes_SelectionChanged(object sender, EventArgs e)
         {
