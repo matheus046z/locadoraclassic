@@ -47,22 +47,27 @@ namespace LocadoraClassic.View
         }
         private void SelectedIndexChanged_GeneroCategoria(object sender, EventArgs e)
         {
-            InitializeDataGridView();
+            if (GeneroComboBox.DroppedDown == false & CategoriaComboBox.DroppedDown == false)
+            {
+                InitializeDataGridView();
+            }
         }
-
-
         private void InitializeDataGridView()
+
         {
             if (GeneroComboBox.SelectedValue != null & CategoriaComboBox.SelectedValue != null)
             {
+                DataTable dt = new DataTable();
+                dt = GetData("SELECT * FROM filmes JOIN categoria " +
+                    "ON CAST(filmes.Id_filme_categoria as VARCHAR(MAX)) = categoria.Id_categoria JOIN genero ON CAST(filmes.Id_filme_genero as VARCHAR(MAX)) = genero.Id_genero WHERE Id_filme_genero = " + GeneroComboBox.SelectedValue + "AND Id_filme_categoria = " + CategoriaComboBox.SelectedValue);
+                string[] selectedColumns = new[] { "Id_filme", "nome_filme", "duracao", "sinopse", "nome_categoria", "nome_genero", "valordiaria", "stlocado" };
+                DataTable dtOrganizada = new DataView(dt).ToTable(false, selectedColumns);
                 dataGridViewBusca.AutoGenerateColumns = true;
-                //MessageBox.Show("SELECT * FROM filmes WHERE Id_filme_genero = " + GeneroComboBox.SelectedValue + " AND Id_filme_categoria = " + CategoriaComboBox.SelectedValue);
-                conexao2BindingSource.DataSource = GetData("SELECT * FROM filmes WHERE Id_filme_genero = " + GeneroComboBox.SelectedValue + " AND Id_filme_categoria = " + CategoriaComboBox.SelectedValue);
+                conexao2BindingSource.DataSource = dtOrganizada;
                 dataGridViewBusca.DataSource = conexao2BindingSource;
                 dataGridViewBusca.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
                 dataGridViewBusca.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            }
-                
+            }     
         }
         private static DataTable GetData(string sqlCommand)
         {
@@ -92,11 +97,10 @@ namespace LocadoraClassic.View
             }
             return table;
         }
-
         private void DataGridViewBusca_SelectionChanged(object sender, EventArgs e)
         {
             Filme filme = new Filme();
-            //FilmeDAL filmeDAL = new FilmeDAL();
+            FilmeDAL filmeDAL = new FilmeDAL();
             int id = 0;
             DataGridViewRow selectedRow = null;
 
@@ -106,11 +110,11 @@ namespace LocadoraClassic.View
                 {
                     selectedRow = dataGridViewBusca.SelectedRows[0];
                     id = Convert.ToInt32(selectedRow.Cells["Id_filme"].Value);
-                    //MessageBox.Show("O 'id' a ser alterado é: " + id.ToString());
                     filme.Id = id;
-                    txtNomeDoFilmeSelecionado.Text = selectedRow.Cells["nome_filme"].Value.ToString(); // criar metodo no DAL para buscar banner no BD
-                    string URLbanner = selectedRow.Cells["banner"].Value.ToString(); // BUG System.ArgumentException, não achou no dtgrview, buscar no banco
+                    txtNomeDoFilmeSelecionado.Text = selectedRow.Cells["nome_filme"].Value.ToString();
+                    txtValorDiaria.Text = selectedRow.Cells["valordiaria"].Value.ToString();
 
+                    string URLbanner = filmeDAL.BuscarBannerURL(filme);
                     var request = WebRequest.Create(URLbanner);
 
                     using (var response = request.GetResponse())
@@ -118,9 +122,7 @@ namespace LocadoraClassic.View
                     {
                         pictureBoxBanner.Image = Bitmap.FromStream(stream);
                     }
-
                 }
-
                 catch (System.InvalidCastException)
                 {
                     selectedRow = null;
@@ -129,19 +131,17 @@ namespace LocadoraClassic.View
                 catch (System.Net.WebException) { }
             }
         }
-
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
+            txtPix.Text = ((float.Parse(txtTotalDeDias.Text)) * float.Parse(txtValorDiaria.Text)).ToString();
             CategoriaComboBox.SelectedIndex = -1;
             GeneroComboBox.SelectedIndex = -1;
-
         }
-
         private void btnBuscarTodos_Click(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            dt = GetData("SELECT * FROM filmes JOIN categoria ON CAST(filmes.Id_filme_categoria as VARCHAR(MAX)) = categoria.Id_categoria");
-            string[] selectedColumns = new[] { "Id_filme", "nome_filme", "duracao", "sinopse", "nome_categoria", "valordiaria" };
+            dt = GetData("SELECT * FROM filmes JOIN categoria ON CAST(filmes.Id_filme_categoria as VARCHAR(MAX)) = categoria.Id_categoria JOIN genero ON CAST(filmes.Id_filme_genero as VARCHAR(MAX)) = genero.Id_genero;");
+            string[] selectedColumns = new[] { "Id_filme", "nome_filme", "duracao", "sinopse", "nome_categoria","nome_genero", "valordiaria", "stlocado" };
             DataTable dtOrganizada = new DataView(dt).ToTable(false, selectedColumns);
             dataGridViewBusca.AutoGenerateColumns = true;
             conexao2BindingSource.DataSource = dtOrganizada;
@@ -149,10 +149,37 @@ namespace LocadoraClassic.View
             dataGridViewBusca.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewBusca.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+        private void dateTimeLocacaoDevolucao_ValueChanged(object sender, EventArgs e)
+        {
+            if (dateTimeLocacao.Checked == true)
+            {
+                DateTime dataLocacao = dateTimeLocacao.Value;
+                
+                if (dateTimeDevolucao.Checked == true)
+                {
+                    DateTime dataDevolucao = dateTimeDevolucao.Value;
+                    txtTotalDeDias.Text = Convert.ToInt32(dataDevolucao.Subtract(dataLocacao).TotalDays).ToString();
+                }
+            } 
+        }
+        private void btnAlugar_Click(object sender, EventArgs e)
+        {
+            int StLocado = Convert.ToInt32(dataGridViewBusca.SelectedRows[0].Cells["stlocado"].Value);
+            if(StLocado == 0)
+            {
+                Filme filme = new Filme();
+                FilmeDAL filmeDAL = new FilmeDAL();
+                int id = Convert.ToInt32(dataGridViewBusca.SelectedRows[0].Cells["Id_filme"].Value);
+                // MessageBox.Show("Id_filme selecionado: " + id.ToString());
+                filme.Id = id;
+                filmeDAL.AlugarFilme(filme);
+                btnBuscarTodos.PerformClick();
+            }
+            else
+            {
+                MessageBox.Show("Filme não disponível para locação");
+            }
+        }
     }
 }
-
-
-//SELECT * FROM filmes
-//JOIN categoria ON CAST(filmes.Id_filme_categoria as VARCHAR(MAX)) = categoria.Id_categoria;
 

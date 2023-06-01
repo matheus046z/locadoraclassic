@@ -28,11 +28,11 @@ namespace LocadoraClassic.View
 
             categoria.Nome = txtNomeCategoria.Text;
             categoria.ValorDiaria = txtValorDiaria.Text;
-            MessageBox.Show("Valor: " + categoria.ValorDiaria);
+            //MessageBox.Show("Valor: " + categoria.ValorDiaria);
 
             categoriaDAL.InserirCategoria(categoria);
             
-            MessageBox.Show(categoria.Nome +" ("+categoria.ValorDiaria+")" + " inserido no banco de dados!");
+            //MessageBox.Show(categoria.Nome +" ("+categoria.ValorDiaria+")" + " inserido no banco de dados!");
 
             InitializeDataGridView();
         }
@@ -125,7 +125,7 @@ namespace LocadoraClassic.View
             categoria.Id = id;
             categoria.Nome = txtNomeNovo.Text;
             categoria.ValorDiaria = txtValorNovo.Text;
-            MessageBox.Show("Valor: " + categoria.ValorDiaria);
+            //MessageBox.Show("Valor: " + categoria.ValorDiaria);
             categoriaDAL.AlterarCategoria(categoria);
             InitializeDataGridView();
         }

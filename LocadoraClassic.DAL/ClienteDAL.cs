@@ -53,7 +53,6 @@ namespace LocadoraClassic.DAL
             {
                 clienteNome = dt.Rows[0][0].ToString();
             }
-
             return clienteNome;
         }
     }

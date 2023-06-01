@@ -29,7 +29,7 @@ namespace LocadoraClassic.View
             genero.Nome = txtNomeGenero.Text;
             generoDAL.IserirGenero(genero);
 
-            MessageBox.Show(genero.Nome + " inserido no banco de dados!");
+            //MessageBox.Show(genero.Nome + " inserido no banco de dados!");
             InitializeDataGridView();
         }
         private void InitializeDataGridView()
