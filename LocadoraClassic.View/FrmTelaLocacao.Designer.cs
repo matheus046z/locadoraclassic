@@ -159,7 +159,7 @@
             this.txtNomeDoFilmeSelecionado.Enabled = false;
             this.txtNomeDoFilmeSelecionado.Location = new System.Drawing.Point(12, 261);
             this.txtNomeDoFilmeSelecionado.Name = "txtNomeDoFilmeSelecionado";
-            this.txtNomeDoFilmeSelecionado.Size = new System.Drawing.Size(522, 21);
+            this.txtNomeDoFilmeSelecionado.Size = new System.Drawing.Size(484, 21);
             this.txtNomeDoFilmeSelecionado.TabIndex = 5;
             // 
             // btnConfirmar

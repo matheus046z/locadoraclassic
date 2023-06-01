@@ -108,9 +108,9 @@ namespace LocadoraClassic.View
                     id = Convert.ToInt32(selectedRow.Cells["Id_filme"].Value);
                     //MessageBox.Show("O 'id' a ser alterado é: " + id.ToString());
                     filme.Id = id;
-                    txtNomeDoFilmeSelecionado.Text = selectedRow.Cells["nome_filme"].Value.ToString();
-                    string URLbanner = selectedRow.Cells["banner"].Value.ToString();
-                    
+                    txtNomeDoFilmeSelecionado.Text = selectedRow.Cells["nome_filme"].Value.ToString(); // criar metodo no DAL para buscar banner no BD
+                    string URLbanner = selectedRow.Cells["banner"].Value.ToString(); // BUG System.ArgumentException, não achou no dtgrview, buscar no banco
+
                     var request = WebRequest.Create(URLbanner);
 
                     using (var response = request.GetResponse())
@@ -139,16 +139,20 @@ namespace LocadoraClassic.View
 
         private void btnBuscarTodos_Click(object sender, EventArgs e)
         {
+            DataTable dt = new DataTable();
+            dt = GetData("SELECT * FROM filmes JOIN categoria ON CAST(filmes.Id_filme_categoria as VARCHAR(MAX)) = categoria.Id_categoria");
+            string[] selectedColumns = new[] { "Id_filme", "nome_filme", "duracao", "sinopse", "nome_categoria", "valordiaria" };
+            DataTable dtOrganizada = new DataView(dt).ToTable(false, selectedColumns);
             dataGridViewBusca.AutoGenerateColumns = true;
-            conexao2BindingSource.DataSource = GetData("SELECT * FROM filmes");
+            conexao2BindingSource.DataSource = dtOrganizada;
             dataGridViewBusca.DataSource = conexao2BindingSource;
             dataGridViewBusca.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewBusca.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
-
-        //private void dataGridViewBusca_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        //{
-
-        //}
     }
 }
+
+
+//SELECT * FROM filmes
+//JOIN categoria ON CAST(filmes.Id_filme_categoria as VARCHAR(MAX)) = categoria.Id_categoria;
+
