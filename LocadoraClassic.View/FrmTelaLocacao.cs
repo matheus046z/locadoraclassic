@@ -15,7 +15,10 @@ namespace LocadoraClassic.View
         public FrmTelaLocacao()
         {
             InitializeComponent();
+            dateTimeLocacao.Value = DateTime.Today;
+            dateTimeDevolucao.Value = DateTime.Today;
         }
+
         private void mtxtCPF_OnTextChanged(object sender, EventArgs e)
         {
             Cliente cliente = new Cliente();
