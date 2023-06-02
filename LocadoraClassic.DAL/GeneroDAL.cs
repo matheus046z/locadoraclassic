@@ -76,7 +76,6 @@ namespace LocadoraClassic.DAL
         public static DataTable ValoresComboBoxGenero()
         {
             DataTable dt = new DataTable();
-
             Conexao2.Sqlcon.Open();
             SqlCommand command;
             SqlDataAdapter adapter = new SqlDataAdapter();
@@ -89,7 +88,6 @@ namespace LocadoraClassic.DAL
             adapter.Fill(dt);
             command.Dispose();
             Conexao2.Sqlcon.Close();
-            
             return dt;
         }
     }

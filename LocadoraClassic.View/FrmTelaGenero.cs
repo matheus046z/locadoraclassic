@@ -4,7 +4,6 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LocadoraClassic.View
 {
@@ -102,12 +101,6 @@ namespace LocadoraClassic.View
             generoDAL.DeletarGenero(genero);
             InitializeDataGridView();
         }
-
-        private void btnReordenarId_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             Genero genero = new Genero();

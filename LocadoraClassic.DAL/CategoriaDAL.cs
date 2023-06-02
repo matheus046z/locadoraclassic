@@ -2,8 +2,6 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Xml;
 using LocadoraClassic.VO;
 
 namespace LocadoraClassic.DAL
@@ -90,6 +88,5 @@ namespace LocadoraClassic.DAL
             Conexao2.Sqlcon.Close();
             return dt;
         }
-
     }
 }

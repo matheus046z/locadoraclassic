@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using LocadoraClassic.VO;
-using MySqlX.XDevAPI;
 
 namespace LocadoraClassic.DAL
 {
@@ -71,4 +65,3 @@ namespace LocadoraClassic.DAL
         }
     }
 }
-// UPDATE filmes SET stlocado = 0 WHERE Id_filme = 4;

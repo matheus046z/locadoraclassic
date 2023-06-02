@@ -4,6 +4,7 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Linq.Expressions;
 using System.Net;
 using System.Windows.Forms;
 
@@ -133,7 +134,8 @@ namespace LocadoraClassic.View
         }
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            txtPix.Text = ((float.Parse(txtTotalDeDias.Text)) * float.Parse(txtValorDiaria.Text)).ToString();
+            //txtPix.Text = ((float.Parse(txtTotalDeDias.Text)) * float.Parse(txtValorDiaria.Text)).ToString();
+            PIX.Text = ((float.Parse(txtTotalDeDias.Text)) * float.Parse(txtValorDiaria.Text)).ToString();
             CategoriaComboBox.SelectedIndex = -1;
             GeneroComboBox.SelectedIndex = -1;
         }
@@ -164,21 +166,25 @@ namespace LocadoraClassic.View
         }
         private void btnAlugar_Click(object sender, EventArgs e)
         {
-            int StLocado = Convert.ToInt32(dataGridViewBusca.SelectedRows[0].Cells["stlocado"].Value);
-            if(StLocado == 0)
+            try
             {
-                Filme filme = new Filme();
-                FilmeDAL filmeDAL = new FilmeDAL();
-                int id = Convert.ToInt32(dataGridViewBusca.SelectedRows[0].Cells["Id_filme"].Value);
-                // MessageBox.Show("Id_filme selecionado: " + id.ToString());
-                filme.Id = id;
-                filmeDAL.AlugarFilme(filme);
-                btnBuscarTodos.PerformClick();
+                int StLocado = Convert.ToInt32(dataGridViewBusca.SelectedRows[0].Cells["stlocado"].Value);
+                if (StLocado == 0)
+                {
+                    Filme filme = new Filme();
+                    FilmeDAL filmeDAL = new FilmeDAL();
+                    int id = Convert.ToInt32(dataGridViewBusca.SelectedRows[0].Cells["Id_filme"].Value);
+                    // MessageBox.Show("Id_filme selecionado: " + id.ToString());
+                    filme.Id = id;
+                    filmeDAL.AlugarFilme(filme);
+                    btnBuscarTodos.PerformClick();
+                }
+                else
+                {
+                    MessageBox.Show("Filme não disponível para locação");
+                }
             }
-            else
-            {
-                MessageBox.Show("Filme não disponível para locação");
-            }
+            catch(System.ArgumentOutOfRangeException){ }
         }
     }
 }

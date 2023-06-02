@@ -36,20 +36,21 @@
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtValorDiaria = new System.Windows.Forms.TextBox();
             this.btnBuscarTodos = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.txtNomeDoFilmeSelecionado = new System.Windows.Forms.TextBox();
-            this.btnConfirmar = new System.Windows.Forms.Button();
             this.dataGridViewBusca = new System.Windows.Forms.DataGridView();
+            this.conexao2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.GeneroComboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.CategoriaComboBox = new System.Windows.Forms.ComboBox();
+            this.btnConfirmar = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txtPix = new System.Windows.Forms.TextBox();
             this.txtTotalDeDias = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnAlugar = new System.Windows.Forms.Button();
             this.dateTimeDevolucao = new System.Windows.Forms.DateTimePicker();
@@ -57,15 +58,14 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBoxBanner = new System.Windows.Forms.PictureBox();
-            this.conexao2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.txtValorDiaria = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.PIX = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBusca)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.conexao2BindingSource)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBanner)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.conexao2BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -139,6 +139,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Busca de Filme por Nome";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(433, 245);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(75, 13);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Valor da diária";
+            // 
+            // txtValorDiaria
+            // 
+            this.txtValorDiaria.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtValorDiaria.Enabled = false;
+            this.txtValorDiaria.Location = new System.Drawing.Point(436, 261);
+            this.txtValorDiaria.Name = "txtValorDiaria";
+            this.txtValorDiaria.Size = new System.Drawing.Size(144, 21);
+            this.txtValorDiaria.TabIndex = 9;
+            // 
             // btnBuscarTodos
             // 
             this.btnBuscarTodos.Location = new System.Drawing.Point(850, 37);
@@ -167,16 +185,6 @@
             this.txtNomeDoFilmeSelecionado.Size = new System.Drawing.Size(417, 21);
             this.txtNomeDoFilmeSelecionado.TabIndex = 5;
             // 
-            // btnConfirmar
-            // 
-            this.btnConfirmar.Location = new System.Drawing.Point(12, 113);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(568, 21);
-            this.btnConfirmar.TabIndex = 6;
-            this.btnConfirmar.Text = "Confirmar Filme e Calcular Pix";
-            this.btnConfirmar.UseVisualStyleBackColor = true;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
-            // 
             // dataGridViewBusca
             // 
             this.dataGridViewBusca.AllowUserToAddRows = false;
@@ -192,6 +200,10 @@
             this.dataGridViewBusca.Size = new System.Drawing.Size(961, 153);
             this.dataGridViewBusca.TabIndex = 5;
             this.dataGridViewBusca.SelectionChanged += new System.EventHandler(this.DataGridViewBusca_SelectionChanged);
+            // 
+            // conexao2BindingSource
+            // 
+            this.conexao2BindingSource.DataSource = typeof(LocadoraClassic.DAL.Conexao2);
             // 
             // label5
             // 
@@ -240,12 +252,22 @@
             this.CategoriaComboBox.SelectedIndexChanged += new System.EventHandler(this.SelectedIndexChanged_GeneroCategoria);
             this.CategoriaComboBox.Click += new System.EventHandler(this.CategoriaComboBox_Click);
             // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.Location = new System.Drawing.Point(12, 113);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(568, 21);
+            this.btnConfirmar.TabIndex = 6;
+            this.btnConfirmar.Text = "Confirmar Filme e Calcular Pix";
+            this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox3.Controls.Add(this.txtPix);
+            this.groupBox3.Controls.Add(this.label12);
+            this.groupBox3.Controls.Add(this.PIX);
             this.groupBox3.Controls.Add(this.txtTotalDeDias);
-            this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.btnAlugar);
             this.groupBox3.Controls.Add(this.btnConfirmar);
@@ -258,19 +280,6 @@
             this.groupBox3.Size = new System.Drawing.Size(979, 152);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Locação";
-            // 
-            // txtPix
-            // 
-            this.txtPix.BackColor = System.Drawing.Color.White;
-            this.txtPix.Enabled = false;
-            this.txtPix.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPix.ForeColor = System.Drawing.Color.Lime;
-            this.txtPix.Location = new System.Drawing.Point(431, 51);
-            this.txtPix.Name = "txtPix";
-            this.txtPix.Size = new System.Drawing.Size(149, 40);
-            this.txtPix.TabIndex = 8;
-            this.txtPix.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtTotalDeDias
             // 
@@ -282,15 +291,6 @@
             this.txtTotalDeDias.Size = new System.Drawing.Size(113, 40);
             this.txtTotalDeDias.TabIndex = 7;
             this.txtTotalDeDias.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(428, 35);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(21, 13);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "Pix";
             // 
             // label8
             // 
@@ -361,27 +361,29 @@
             this.pictureBoxBanner.TabIndex = 7;
             this.pictureBoxBanner.TabStop = false;
             // 
-            // conexao2BindingSource
+            // PIX
             // 
-            this.conexao2BindingSource.DataSource = typeof(LocadoraClassic.DAL.Conexao2);
+            this.PIX.AutoSize = true;
+            this.PIX.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PIX.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.PIX.Location = new System.Drawing.Point(476, 49);
+            this.PIX.Name = "PIX";
+            this.PIX.Size = new System.Drawing.Size(55, 42);
+            this.PIX.TabIndex = 9;
+            this.PIX.Text = "PIX";
+            this.PIX.UseCompatibleTextRendering = true;
             // 
-            // txtValorDiaria
+            // label12
             // 
-            this.txtValorDiaria.BackColor = System.Drawing.SystemColors.Menu;
-            this.txtValorDiaria.Enabled = false;
-            this.txtValorDiaria.Location = new System.Drawing.Point(436, 261);
-            this.txtValorDiaria.Name = "txtValorDiaria";
-            this.txtValorDiaria.Size = new System.Drawing.Size(144, 21);
-            this.txtValorDiaria.TabIndex = 9;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(433, 245);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(75, 13);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "Valor da diária";
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.label12.Location = new System.Drawing.Point(436, 49);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(45, 42);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "R$";
+            this.label12.UseCompatibleTextRendering = true;
             // 
             // FrmTelaLocacao
             // 
@@ -406,10 +408,10 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBusca)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.conexao2BindingSource)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBanner)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.conexao2BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -430,7 +432,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox CategoriaComboBox;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnAlugar;
         private System.Windows.Forms.DateTimePicker dateTimeDevolucao;
@@ -442,9 +443,10 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnBuscarTodos;
         private System.Windows.Forms.PictureBox pictureBoxBanner;
-        private System.Windows.Forms.TextBox txtPix;
         private System.Windows.Forms.TextBox txtTotalDeDias;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtValorDiaria;
+        private System.Windows.Forms.Label PIX;
+        private System.Windows.Forms.Label label12;
     }
 }
