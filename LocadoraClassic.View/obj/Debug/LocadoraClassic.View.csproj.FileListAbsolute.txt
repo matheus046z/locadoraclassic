@@ -128,3 +128,4 @@ C:\Users\ALUNO\source\repos\locadoraclassic2\locadoraclassic\LocadoraClassic.Vie
 C:\Users\ALUNO\source\repos\locadoraclassic2\locadoraclassic\LocadoraClassic.View\obj\Debug\LocadoraClassic.View.exe
 C:\Users\ALUNO\source\repos\locadoraclassic2\locadoraclassic\LocadoraClassic.View\obj\Debug\LocadoraClassic.View.pdb
 C:\Users\Matheus-Notebook\source\repos\locadoraclassic\locadoraclassic\LocadoraClassic.View\obj\Debug\LocadoraClassic.View.FrmTelaInicialUiDesign.resources
+C:\Users\ALUNO\source\repos\locadoraclassic2\locadoraclassic\LocadoraClassic.View\obj\Debug\LocadoraClassic.View.FrmTelaInicialUiDesign.resources
