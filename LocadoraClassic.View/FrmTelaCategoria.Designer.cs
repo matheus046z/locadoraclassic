@@ -36,6 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtValorDiaria = new System.Windows.Forms.TextBox();
             this.dataGridViewCategoria = new System.Windows.Forms.DataGridView();
+            this.conexao2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnExcluir = new System.Windows.Forms.Button();
             this.txtNomeSelecionado = new System.Windows.Forms.TextBox();
             this.txtValorSelecionado = new System.Windows.Forms.TextBox();
@@ -46,7 +47,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtValorNovo = new System.Windows.Forms.TextBox();
             this.btnAlterar = new System.Windows.Forms.Button();
-            this.conexao2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCategoria)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.conexao2BindingSource)).BeginInit();
             this.SuspendLayout();
@@ -100,20 +100,28 @@
             this.dataGridViewCategoria.AllowUserToOrderColumns = true;
             this.dataGridViewCategoria.AllowUserToResizeColumns = false;
             this.dataGridViewCategoria.AllowUserToResizeRows = false;
+            this.dataGridViewCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewCategoria.AutoGenerateColumns = false;
             this.dataGridViewCategoria.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewCategoria.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCategoria.DataSource = this.conexao2BindingSource;
-            this.dataGridViewCategoria.Location = new System.Drawing.Point(38, 192);
+            this.dataGridViewCategoria.Location = new System.Drawing.Point(38, 161);
             this.dataGridViewCategoria.Name = "dataGridViewCategoria";
-            this.dataGridViewCategoria.Size = new System.Drawing.Size(404, 411);
+            this.dataGridViewCategoria.Size = new System.Drawing.Size(566, 218);
             this.dataGridViewCategoria.TabIndex = 4;
             this.dataGridViewCategoria.SelectionChanged += new System.EventHandler(this.DataGridViewCategoria_SelectionChanged);
             // 
+            // conexao2BindingSource
+            // 
+            this.conexao2BindingSource.DataSource = typeof(LocadoraClassic.DAL.Conexao2);
+            // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(701, 207);
+            this.btnExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnExcluir.Location = new System.Drawing.Point(257, 434);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(102, 23);
             this.btnExcluir.TabIndex = 6;
@@ -123,27 +131,30 @@
             // 
             // txtNomeSelecionado
             // 
+            this.txtNomeSelecionado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtNomeSelecionado.BackColor = System.Drawing.SystemColors.Menu;
             this.txtNomeSelecionado.Enabled = false;
-            this.txtNomeSelecionado.Location = new System.Drawing.Point(482, 211);
+            this.txtNomeSelecionado.Location = new System.Drawing.Point(38, 438);
             this.txtNomeSelecionado.Name = "txtNomeSelecionado";
             this.txtNomeSelecionado.Size = new System.Drawing.Size(95, 20);
             this.txtNomeSelecionado.TabIndex = 7;
             // 
             // txtValorSelecionado
             // 
+            this.txtValorSelecionado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtValorSelecionado.BackColor = System.Drawing.SystemColors.Menu;
             this.txtValorSelecionado.Enabled = false;
-            this.txtValorSelecionado.Location = new System.Drawing.Point(594, 210);
+            this.txtValorSelecionado.Location = new System.Drawing.Point(150, 437);
             this.txtValorSelecionado.Name = "txtValorSelecionado";
             this.txtValorSelecionado.Size = new System.Drawing.Size(87, 20);
             this.txtValorSelecionado.TabIndex = 8;
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(480, 192);
+            this.label3.Location = new System.Drawing.Point(36, 419);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 12);
             this.label3.TabIndex = 9;
@@ -151,9 +162,10 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(592, 191);
+            this.label4.Location = new System.Drawing.Point(148, 418);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(27, 12);
             this.label4.TabIndex = 10;
@@ -161,16 +173,18 @@
             // 
             // txtNomeNovo
             // 
-            this.txtNomeNovo.Location = new System.Drawing.Point(482, 256);
+            this.txtNomeNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtNomeNovo.Location = new System.Drawing.Point(38, 483);
             this.txtNomeNovo.Name = "txtNomeNovo";
             this.txtNomeNovo.Size = new System.Drawing.Size(95, 20);
             this.txtNomeNovo.TabIndex = 11;
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(480, 241);
+            this.label5.Location = new System.Drawing.Point(36, 468);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 12);
             this.label5.TabIndex = 12;
@@ -178,9 +192,10 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(592, 241);
+            this.label6.Location = new System.Drawing.Point(148, 468);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 12);
             this.label6.TabIndex = 13;
@@ -188,14 +203,16 @@
             // 
             // txtValorNovo
             // 
-            this.txtValorNovo.Location = new System.Drawing.Point(594, 256);
+            this.txtValorNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtValorNovo.Location = new System.Drawing.Point(150, 483);
             this.txtValorNovo.Name = "txtValorNovo";
             this.txtValorNovo.Size = new System.Drawing.Size(87, 20);
             this.txtValorNovo.TabIndex = 14;
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(701, 252);
+            this.btnAlterar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAlterar.Location = new System.Drawing.Point(257, 479);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(102, 23);
             this.btnAlterar.TabIndex = 15;
@@ -203,15 +220,11 @@
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
-            // conexao2BindingSource
-            // 
-            this.conexao2BindingSource.DataSource = typeof(LocadoraClassic.DAL.Conexao2);
-            // 
             // FrmTelaCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(888, 665);
+            this.ClientSize = new System.Drawing.Size(668, 522);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.txtValorNovo);
             this.Controls.Add(this.label6);
@@ -228,13 +241,11 @@
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.txtNomeCategoria);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmTelaCategoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro Categoria";
             this.TopMost = true;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCategoria)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.conexao2BindingSource)).EndInit();
             this.ResumeLayout(false);

@@ -50,6 +50,8 @@
             this.CategoriaComboBox = new System.Windows.Forms.ComboBox();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.PIX = new System.Windows.Forms.Label();
             this.txtTotalDeDias = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnAlugar = new System.Windows.Forms.Button();
@@ -58,8 +60,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBoxBanner = new System.Windows.Forms.PictureBox();
-            this.PIX = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBusca)).BeginInit();
@@ -70,6 +70,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 16);
             this.label1.Name = "label1";
@@ -79,6 +80,7 @@
             // 
             // mtxtCPF
             // 
+            this.mtxtCPF.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mtxtCPF.Location = new System.Drawing.Point(9, 33);
             this.mtxtCPF.Mask = "000.000.000-00";
             this.mtxtCPF.Name = "mtxtCPF";
@@ -88,6 +90,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(166, 16);
             this.label2.Name = "label2";
@@ -97,6 +100,7 @@
             // 
             // txtCliente
             // 
+            this.txtCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCliente.Enabled = false;
             this.txtCliente.Location = new System.Drawing.Point(166, 33);
             this.txtCliente.Name = "txtCliente";
@@ -113,7 +117,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(979, 77);
+            this.groupBox1.Size = new System.Drawing.Size(509, 60);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Busca de Cliente por CPF";
@@ -132,17 +136,18 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.CategoriaComboBox);
-            this.groupBox2.Location = new System.Drawing.Point(12, 95);
+            this.groupBox2.Location = new System.Drawing.Point(12, 78);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(979, 295);
+            this.groupBox2.Size = new System.Drawing.Size(509, 255);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Busca de Filme por Nome";
             // 
             // label11
             // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(433, 245);
+            this.label11.Location = new System.Drawing.Point(391, 188);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(75, 13);
             this.label11.TabIndex = 10;
@@ -150,16 +155,18 @@
             // 
             // txtValorDiaria
             // 
+            this.txtValorDiaria.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtValorDiaria.BackColor = System.Drawing.SystemColors.Menu;
             this.txtValorDiaria.Enabled = false;
-            this.txtValorDiaria.Location = new System.Drawing.Point(436, 261);
+            this.txtValorDiaria.Location = new System.Drawing.Point(394, 204);
             this.txtValorDiaria.Name = "txtValorDiaria";
-            this.txtValorDiaria.Size = new System.Drawing.Size(144, 21);
+            this.txtValorDiaria.Size = new System.Drawing.Size(89, 21);
             this.txtValorDiaria.TabIndex = 9;
             // 
             // btnBuscarTodos
             // 
-            this.btnBuscarTodos.Location = new System.Drawing.Point(850, 37);
+            this.btnBuscarTodos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBuscarTodos.Location = new System.Drawing.Point(357, 34);
             this.btnBuscarTodos.Name = "btnBuscarTodos";
             this.btnBuscarTodos.Size = new System.Drawing.Size(123, 23);
             this.btnBuscarTodos.TabIndex = 8;
@@ -169,20 +176,23 @@
             // 
             // label10
             // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(9, 63);
+            this.label10.Location = new System.Drawing.Point(9, 57);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(86, 13);
             this.label10.TabIndex = 7;
             this.label10.Text = "Selecione o filme";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // txtNomeDoFilmeSelecionado
             // 
+            this.txtNomeDoFilmeSelecionado.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNomeDoFilmeSelecionado.BackColor = System.Drawing.SystemColors.Menu;
             this.txtNomeDoFilmeSelecionado.Enabled = false;
-            this.txtNomeDoFilmeSelecionado.Location = new System.Drawing.Point(12, 261);
+            this.txtNomeDoFilmeSelecionado.Location = new System.Drawing.Point(12, 204);
             this.txtNomeDoFilmeSelecionado.Name = "txtNomeDoFilmeSelecionado";
-            this.txtNomeDoFilmeSelecionado.Size = new System.Drawing.Size(417, 21);
+            this.txtNomeDoFilmeSelecionado.Size = new System.Drawing.Size(230, 21);
             this.txtNomeDoFilmeSelecionado.TabIndex = 5;
             // 
             // dataGridViewBusca
@@ -190,14 +200,17 @@
             this.dataGridViewBusca.AllowUserToAddRows = false;
             this.dataGridViewBusca.AllowUserToDeleteRows = false;
             this.dataGridViewBusca.AllowUserToOrderColumns = true;
+            this.dataGridViewBusca.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewBusca.AutoGenerateColumns = false;
             this.dataGridViewBusca.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridViewBusca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewBusca.DataSource = this.conexao2BindingSource;
-            this.dataGridViewBusca.Location = new System.Drawing.Point(12, 79);
+            this.dataGridViewBusca.Location = new System.Drawing.Point(12, 73);
             this.dataGridViewBusca.Name = "dataGridViewBusca";
             this.dataGridViewBusca.ReadOnly = true;
-            this.dataGridViewBusca.Size = new System.Drawing.Size(961, 153);
+            this.dataGridViewBusca.Size = new System.Drawing.Size(471, 112);
             this.dataGridViewBusca.TabIndex = 5;
             this.dataGridViewBusca.SelectionChanged += new System.EventHandler(this.DataGridViewBusca_SelectionChanged);
             // 
@@ -207,8 +220,9 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 245);
+            this.label5.Location = new System.Drawing.Point(9, 188);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(136, 13);
             this.label5.TabIndex = 4;
@@ -216,18 +230,20 @@
             // 
             // GeneroComboBox
             // 
+            this.GeneroComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.GeneroComboBox.FormattingEnabled = true;
-            this.GeneroComboBox.Location = new System.Drawing.Point(240, 37);
+            this.GeneroComboBox.Location = new System.Drawing.Point(174, 33);
             this.GeneroComboBox.Name = "GeneroComboBox";
-            this.GeneroComboBox.Size = new System.Drawing.Size(231, 21);
+            this.GeneroComboBox.Size = new System.Drawing.Size(159, 21);
             this.GeneroComboBox.TabIndex = 4;
             this.GeneroComboBox.SelectedIndexChanged += new System.EventHandler(this.SelectedIndexChanged_GeneroCategoria);
             this.GeneroComboBox.Click += new System.EventHandler(this.GeneroComboBox_Click);
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(237, 21);
+            this.label4.Location = new System.Drawing.Point(171, 15);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 13);
             this.label4.TabIndex = 2;
@@ -235,8 +251,9 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 20);
+            this.label3.Location = new System.Drawing.Point(6, 17);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 1;
@@ -244,21 +261,23 @@
             // 
             // CategoriaComboBox
             // 
+            this.CategoriaComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CategoriaComboBox.FormattingEnabled = true;
-            this.CategoriaComboBox.Location = new System.Drawing.Point(12, 37);
+            this.CategoriaComboBox.Location = new System.Drawing.Point(9, 33);
             this.CategoriaComboBox.Name = "CategoriaComboBox";
-            this.CategoriaComboBox.Size = new System.Drawing.Size(222, 21);
+            this.CategoriaComboBox.Size = new System.Drawing.Size(159, 21);
             this.CategoriaComboBox.TabIndex = 3;
             this.CategoriaComboBox.SelectedIndexChanged += new System.EventHandler(this.SelectedIndexChanged_GeneroCategoria);
             this.CategoriaComboBox.Click += new System.EventHandler(this.CategoriaComboBox_Click);
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(12, 113);
+            this.btnConfirmar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnConfirmar.Location = new System.Drawing.Point(12, 58);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(568, 21);
+            this.btnConfirmar.Size = new System.Drawing.Size(219, 30);
             this.btnConfirmar.TabIndex = 6;
-            this.btnConfirmar.Text = "Confirmar Filme e Calcular Pix";
+            this.btnConfirmar.Text = "Confirmar Filme e Calcular Valor";
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
@@ -275,27 +294,55 @@
             this.groupBox3.Controls.Add(this.dateTimeLocacao);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Location = new System.Drawing.Point(12, 396);
+            this.groupBox3.Location = new System.Drawing.Point(12, 339);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(979, 152);
+            this.groupBox3.Size = new System.Drawing.Size(509, 171);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.label12.Location = new System.Drawing.Point(360, 107);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(45, 42);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "R$";
+            this.label12.UseCompatibleTextRendering = true;
+            this.label12.Click += new System.EventHandler(this.label12_Click);
+            // 
+            // PIX
+            // 
+            this.PIX.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PIX.AutoSize = true;
+            this.PIX.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PIX.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.PIX.Location = new System.Drawing.Point(411, 106);
+            this.PIX.Name = "PIX";
+            this.PIX.Size = new System.Drawing.Size(0, 38);
+            this.PIX.TabIndex = 9;
+            this.PIX.UseCompatibleTextRendering = true;
+            // 
             // txtTotalDeDias
             // 
+            this.txtTotalDeDias.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTotalDeDias.BackColor = System.Drawing.SystemColors.Menu;
             this.txtTotalDeDias.Enabled = false;
-            this.txtTotalDeDias.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalDeDias.Location = new System.Drawing.Point(287, 51);
+            this.txtTotalDeDias.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalDeDias.Location = new System.Drawing.Point(238, 58);
             this.txtTotalDeDias.Name = "txtTotalDeDias";
-            this.txtTotalDeDias.Size = new System.Drawing.Size(113, 40);
+            this.txtTotalDeDias.Size = new System.Drawing.Size(113, 30);
             this.txtTotalDeDias.TabIndex = 7;
             this.txtTotalDeDias.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(284, 35);
+            this.label8.Location = new System.Drawing.Point(235, 42);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(69, 13);
             this.label8.TabIndex = 5;
@@ -303,15 +350,16 @@
             // 
             // btnAlugar
             // 
+            this.btnAlugar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAlugar.BackColor = System.Drawing.Color.ForestGreen;
             this.btnAlugar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAlugar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAlugar.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAlugar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAlugar.Location = new System.Drawing.Point(655, 34);
+            this.btnAlugar.Location = new System.Drawing.Point(12, 96);
             this.btnAlugar.Margin = new System.Windows.Forms.Padding(1);
             this.btnAlugar.Name = "btnAlugar";
-            this.btnAlugar.Size = new System.Drawing.Size(277, 64);
+            this.btnAlugar.Size = new System.Drawing.Size(339, 53);
             this.btnAlugar.TabIndex = 4;
             this.btnAlugar.Text = "ALUGAR";
             this.btnAlugar.UseVisualStyleBackColor = false;
@@ -319,7 +367,8 @@
             // 
             // dateTimeDevolucao
             // 
-            this.dateTimeDevolucao.Location = new System.Drawing.Point(12, 77);
+            this.dateTimeDevolucao.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dateTimeDevolucao.Location = new System.Drawing.Point(238, 17);
             this.dateTimeDevolucao.Name = "dateTimeDevolucao";
             this.dateTimeDevolucao.Size = new System.Drawing.Size(222, 21);
             this.dateTimeDevolucao.TabIndex = 3;
@@ -327,7 +376,8 @@
             // 
             // dateTimeLocacao
             // 
-            this.dateTimeLocacao.Location = new System.Drawing.Point(12, 34);
+            this.dateTimeLocacao.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dateTimeLocacao.Location = new System.Drawing.Point(9, 17);
             this.dateTimeLocacao.Name = "dateTimeLocacao";
             this.dateTimeLocacao.Size = new System.Drawing.Size(222, 21);
             this.dateTimeLocacao.TabIndex = 2;
@@ -335,8 +385,9 @@
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 61);
+            this.label7.Location = new System.Drawing.Point(235, 1);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(98, 13);
             this.label7.TabIndex = 1;
@@ -344,8 +395,9 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 18);
+            this.label6.Location = new System.Drawing.Point(6, 1);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 13);
             this.label6.TabIndex = 0;
@@ -353,56 +405,31 @@
             // 
             // pictureBoxBanner
             // 
-            this.pictureBoxBanner.Location = new System.Drawing.Point(1014, 12);
-            this.pictureBoxBanner.MaximumSize = new System.Drawing.Size(323, 518);
+            this.pictureBoxBanner.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxBanner.Location = new System.Drawing.Point(527, 12);
             this.pictureBoxBanner.Name = "pictureBoxBanner";
-            this.pictureBoxBanner.Size = new System.Drawing.Size(323, 518);
+            this.pictureBoxBanner.Size = new System.Drawing.Size(129, 481);
             this.pictureBoxBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxBanner.TabIndex = 7;
             this.pictureBoxBanner.TabStop = false;
-            // 
-            // PIX
-            // 
-            this.PIX.AutoSize = true;
-            this.PIX.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PIX.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.PIX.Location = new System.Drawing.Point(476, 49);
-            this.PIX.Name = "PIX";
-            this.PIX.Size = new System.Drawing.Size(55, 42);
-            this.PIX.TabIndex = 9;
-            this.PIX.Text = "PIX";
-            this.PIX.UseCompatibleTextRendering = true;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.label12.Location = new System.Drawing.Point(436, 49);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(45, 42);
-            this.label12.TabIndex = 10;
-            this.label12.Text = "R$";
-            this.label12.UseCompatibleTextRendering = true;
             // 
             // FrmTelaLocacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1380, 637);
+            this.ClientSize = new System.Drawing.Size(668, 522);
             this.Controls.Add(this.pictureBoxBanner);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimizeBox = false;
             this.Name = "FrmTelaLocacao";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Locar Filme";
             this.TopMost = true;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

@@ -17,7 +17,8 @@ namespace LocadoraClassic.View
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FrmConectarBD());
-            Application.Run(new fmrMenu());
+            //Application.Run(new fmrMenu());
+            Application.Run(new FrmTelaInicialUiDesign());
 
         }
     }

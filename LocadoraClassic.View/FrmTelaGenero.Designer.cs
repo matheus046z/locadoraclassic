@@ -34,6 +34,7 @@
             this.txtNomeGenero = new System.Windows.Forms.TextBox();
             this.btnCadastrarGenero = new System.Windows.Forms.Button();
             this.dataGridViewGenero = new System.Windows.Forms.DataGridView();
+            this.conexao2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNomeSelecionado = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.conexao2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGenero)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.conexao2BindingSource)).BeginInit();
             this.SuspendLayout();
@@ -78,16 +78,23 @@
             this.dataGridViewGenero.AllowUserToDeleteRows = false;
             this.dataGridViewGenero.AllowUserToResizeColumns = false;
             this.dataGridViewGenero.AllowUserToResizeRows = false;
+            this.dataGridViewGenero.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewGenero.AutoGenerateColumns = false;
             this.dataGridViewGenero.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewGenero.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewGenero.DataSource = this.conexao2BindingSource;
-            this.dataGridViewGenero.Location = new System.Drawing.Point(42, 138);
+            this.dataGridViewGenero.Location = new System.Drawing.Point(42, 117);
             this.dataGridViewGenero.Name = "dataGridViewGenero";
             this.dataGridViewGenero.ReadOnly = true;
-            this.dataGridViewGenero.Size = new System.Drawing.Size(570, 525);
+            this.dataGridViewGenero.Size = new System.Drawing.Size(570, 262);
             this.dataGridViewGenero.TabIndex = 0;
             this.dataGridViewGenero.SelectionChanged += new System.EventHandler(this.DataGridViewGenero_SelectionChanged);
+            // 
+            // conexao2BindingSource
+            // 
+            this.conexao2BindingSource.DataSource = typeof(LocadoraClassic.DAL.Conexao2);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -97,7 +104,8 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(794, 150);
+            this.btnExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnExcluir.Location = new System.Drawing.Point(202, 415);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(168, 23);
             this.btnExcluir.TabIndex = 3;
@@ -107,7 +115,8 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(794, 193);
+            this.btnAlterar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAlterar.Location = new System.Drawing.Point(202, 458);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(168, 23);
             this.btnAlterar.TabIndex = 5;
@@ -117,16 +126,18 @@
             // 
             // txtNomeNovo
             // 
-            this.txtNomeNovo.Location = new System.Drawing.Point(634, 195);
+            this.txtNomeNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtNomeNovo.Location = new System.Drawing.Point(42, 460);
             this.txtNomeNovo.Name = "txtNomeNovo";
             this.txtNomeNovo.Size = new System.Drawing.Size(154, 21);
             this.txtNomeNovo.TabIndex = 6;
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(632, 181);
+            this.label2.Location = new System.Drawing.Point(40, 446);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 11);
             this.label2.TabIndex = 7;
@@ -134,32 +145,30 @@
             // 
             // txtNomeSelecionado
             // 
+            this.txtNomeSelecionado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtNomeSelecionado.BackColor = System.Drawing.SystemColors.Menu;
             this.txtNomeSelecionado.Enabled = false;
-            this.txtNomeSelecionado.Location = new System.Drawing.Point(634, 152);
+            this.txtNomeSelecionado.Location = new System.Drawing.Point(42, 417);
             this.txtNomeSelecionado.Name = "txtNomeSelecionado";
             this.txtNomeSelecionado.Size = new System.Drawing.Size(154, 21);
             this.txtNomeSelecionado.TabIndex = 8;
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(632, 138);
+            this.label3.Location = new System.Drawing.Point(40, 403);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 11);
             this.label3.TabIndex = 9;
             this.label3.Text = "Gênero Selecionado";
             // 
-            // conexao2BindingSource
-            // 
-            this.conexao2BindingSource.DataSource = typeof(LocadoraClassic.DAL.Conexao2);
-            // 
             // FrmTelaGenero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1004, 728);
+            this.ClientSize = new System.Drawing.Size(668, 522);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtNomeSelecionado);
             this.Controls.Add(this.label2);
@@ -171,15 +180,11 @@
             this.Controls.Add(this.txtNomeGenero);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "FrmTelaGenero";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cadastro de Gênero";
             this.TopMost = true;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGenero)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.conexao2BindingSource)).EndInit();
             this.ResumeLayout(false);

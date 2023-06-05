@@ -169,25 +169,42 @@ namespace LocadoraClassic.View
         }
         private void btnAlugar_Click(object sender, EventArgs e)
         {
-            try
+            if (txtCliente.Text != "")
             {
-                int StLocado = Convert.ToInt32(dataGridViewBusca.SelectedRows[0].Cells["stlocado"].Value);
-                if (StLocado == 0)
+                try
                 {
-                    Filme filme = new Filme();
-                    FilmeDAL filmeDAL = new FilmeDAL();
-                    int id = Convert.ToInt32(dataGridViewBusca.SelectedRows[0].Cells["Id_filme"].Value);
-                    // MessageBox.Show("Id_filme selecionado: " + id.ToString());
-                    filme.Id = id;
-                    filmeDAL.AlugarFilme(filme);
-                    btnBuscarTodos.PerformClick();
+                    int StLocado = Convert.ToInt32(dataGridViewBusca.SelectedRows[0].Cells["stlocado"].Value);
+                    if (StLocado == 0)
+                    {
+                        Filme filme = new Filme();
+                        FilmeDAL filmeDAL = new FilmeDAL();
+                        int id = Convert.ToInt32(dataGridViewBusca.SelectedRows[0].Cells["Id_filme"].Value);
+                        // MessageBox.Show("Id_filme selecionado: " + id.ToString());
+                        filme.Id = id;
+                        filmeDAL.AlugarFilme(filme);
+                        btnBuscarTodos.PerformClick();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Filme não disponível para locação");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Filme não disponível para locação");
-                }
+                catch (System.ArgumentOutOfRangeException) { }
             }
-            catch(System.ArgumentOutOfRangeException){ }
+            else
+            {
+                MessageBox.Show("Digite o CPF de cliente cadastrado para alugar um filme!");
+            }
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
