@@ -54,6 +54,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.LightGray;
             this.label1.Location = new System.Drawing.Point(35, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 13);
@@ -62,6 +63,8 @@
             // 
             // txtNomeCategoria
             // 
+            this.txtNomeCategoria.BackColor = System.Drawing.Color.Silver;
+            this.txtNomeCategoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNomeCategoria.Location = new System.Drawing.Point(38, 58);
             this.txtNomeCategoria.Name = "txtNomeCategoria";
             this.txtNomeCategoria.Size = new System.Drawing.Size(404, 20);
@@ -69,17 +72,23 @@
             // 
             // btnCadastrar
             // 
+            this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnCadastrar.FlatAppearance.BorderSize = 0;
+            this.btnCadastrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrar.ForeColor = System.Drawing.Color.LightGray;
             this.btnCadastrar.Location = new System.Drawing.Point(38, 123);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(404, 23);
             this.btnCadastrar.TabIndex = 3;
             this.btnCadastrar.Text = "Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.LightGray;
             this.label2.Location = new System.Drawing.Point(35, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(217, 13);
@@ -88,6 +97,8 @@
             // 
             // txtValorDiaria
             // 
+            this.txtValorDiaria.BackColor = System.Drawing.Color.Silver;
+            this.txtValorDiaria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtValorDiaria.Location = new System.Drawing.Point(38, 97);
             this.txtValorDiaria.Name = "txtValorDiaria";
             this.txtValorDiaria.Size = new System.Drawing.Size(404, 20);
@@ -121,18 +132,24 @@
             // btnExcluir
             // 
             this.btnExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnExcluir.FlatAppearance.BorderSize = 0;
+            this.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluir.ForeColor = System.Drawing.Color.LightGray;
             this.btnExcluir.Location = new System.Drawing.Point(257, 434);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(102, 23);
             this.btnExcluir.TabIndex = 6;
             this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // txtNomeSelecionado
             // 
             this.txtNomeSelecionado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtNomeSelecionado.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtNomeSelecionado.BackColor = System.Drawing.Color.DarkGray;
+            this.txtNomeSelecionado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNomeSelecionado.Enabled = false;
             this.txtNomeSelecionado.Location = new System.Drawing.Point(38, 438);
             this.txtNomeSelecionado.Name = "txtNomeSelecionado";
@@ -142,7 +159,8 @@
             // txtValorSelecionado
             // 
             this.txtValorSelecionado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtValorSelecionado.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtValorSelecionado.BackColor = System.Drawing.Color.DarkGray;
+            this.txtValorSelecionado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtValorSelecionado.Enabled = false;
             this.txtValorSelecionado.Location = new System.Drawing.Point(150, 437);
             this.txtValorSelecionado.Name = "txtValorSelecionado";
@@ -154,6 +172,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.LightGray;
             this.label3.Location = new System.Drawing.Point(36, 419);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 12);
@@ -165,6 +184,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.LightGray;
             this.label4.Location = new System.Drawing.Point(148, 418);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(27, 12);
@@ -174,6 +194,8 @@
             // txtNomeNovo
             // 
             this.txtNomeNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtNomeNovo.BackColor = System.Drawing.Color.Silver;
+            this.txtNomeNovo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNomeNovo.Location = new System.Drawing.Point(38, 483);
             this.txtNomeNovo.Name = "txtNomeNovo";
             this.txtNomeNovo.Size = new System.Drawing.Size(95, 20);
@@ -184,6 +206,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.LightGray;
             this.label5.Location = new System.Drawing.Point(36, 468);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 12);
@@ -195,6 +218,7 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.LightGray;
             this.label6.Location = new System.Drawing.Point(148, 468);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 12);
@@ -204,6 +228,8 @@
             // txtValorNovo
             // 
             this.txtValorNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtValorNovo.BackColor = System.Drawing.Color.Silver;
+            this.txtValorNovo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtValorNovo.Location = new System.Drawing.Point(150, 483);
             this.txtValorNovo.Name = "txtValorNovo";
             this.txtValorNovo.Size = new System.Drawing.Size(87, 20);
@@ -212,18 +238,24 @@
             // btnAlterar
             // 
             this.btnAlterar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnAlterar.FlatAppearance.BorderSize = 0;
+            this.btnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterar.ForeColor = System.Drawing.Color.LightGray;
             this.btnAlterar.Location = new System.Drawing.Point(257, 479);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(102, 23);
             this.btnAlterar.TabIndex = 15;
             this.btnAlterar.Text = "Alterar";
-            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.UseVisualStyleBackColor = false;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // FrmTelaCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(668, 522);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.txtValorNovo);
@@ -242,6 +274,7 @@
             this.Controls.Add(this.txtNomeCategoria);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(684, 561);
             this.Name = "FrmTelaCategoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro Categoria";

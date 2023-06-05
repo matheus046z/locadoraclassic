@@ -115,7 +115,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(422, 60);
+            this.groupBox1.Size = new System.Drawing.Size(361, 60);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Busca de Cliente por CPF";
@@ -139,7 +139,7 @@
             this.groupBox2.Controls.Add(this.CategoriaComboBox);
             this.groupBox2.Location = new System.Drawing.Point(12, 78);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(422, 255);
+            this.groupBox2.Size = new System.Drawing.Size(361, 268);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Busca de Filme por Nome";
@@ -148,7 +148,7 @@
             // 
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(314, 212);
+            this.label11.Location = new System.Drawing.Point(253, 225);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(75, 13);
             this.label11.TabIndex = 10;
@@ -159,7 +159,7 @@
             this.txtValorDiaria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtValorDiaria.BackColor = System.Drawing.SystemColors.Menu;
             this.txtValorDiaria.Enabled = false;
-            this.txtValorDiaria.Location = new System.Drawing.Point(317, 228);
+            this.txtValorDiaria.Location = new System.Drawing.Point(256, 241);
             this.txtValorDiaria.Name = "txtValorDiaria";
             this.txtValorDiaria.Size = new System.Drawing.Size(89, 21);
             this.txtValorDiaria.TabIndex = 9;
@@ -167,7 +167,7 @@
             // btnBuscarTodos
             // 
             this.btnBuscarTodos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBuscarTodos.Location = new System.Drawing.Point(310, 31);
+            this.btnBuscarTodos.Location = new System.Drawing.Point(249, 31);
             this.btnBuscarTodos.Name = "btnBuscarTodos";
             this.btnBuscarTodos.Size = new System.Drawing.Size(96, 23);
             this.btnBuscarTodos.TabIndex = 8;
@@ -191,9 +191,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNomeDoFilmeSelecionado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txtNomeDoFilmeSelecionado.Enabled = false;
-            this.txtNomeDoFilmeSelecionado.Location = new System.Drawing.Point(9, 228);
+            this.txtNomeDoFilmeSelecionado.Location = new System.Drawing.Point(9, 241);
             this.txtNomeDoFilmeSelecionado.Name = "txtNomeDoFilmeSelecionado";
-            this.txtNomeDoFilmeSelecionado.Size = new System.Drawing.Size(261, 21);
+            this.txtNomeDoFilmeSelecionado.Size = new System.Drawing.Size(200, 21);
             this.txtNomeDoFilmeSelecionado.TabIndex = 5;
             // 
             // dataGridViewBusca
@@ -211,7 +211,7 @@
             this.dataGridViewBusca.Location = new System.Drawing.Point(9, 73);
             this.dataGridViewBusca.Name = "dataGridViewBusca";
             this.dataGridViewBusca.ReadOnly = true;
-            this.dataGridViewBusca.Size = new System.Drawing.Size(399, 136);
+            this.dataGridViewBusca.Size = new System.Drawing.Size(338, 149);
             this.dataGridViewBusca.TabIndex = 5;
             this.dataGridViewBusca.SelectionChanged += new System.EventHandler(this.DataGridViewBusca_SelectionChanged);
             // 
@@ -224,7 +224,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 212);
+            this.label5.Location = new System.Drawing.Point(6, 225);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(136, 13);
             this.label5.TabIndex = 4;
@@ -235,7 +235,7 @@
             this.GeneroComboBox.FormattingEnabled = true;
             this.GeneroComboBox.Location = new System.Drawing.Point(133, 31);
             this.GeneroComboBox.Name = "GeneroComboBox";
-            this.GeneroComboBox.Size = new System.Drawing.Size(118, 21);
+            this.GeneroComboBox.Size = new System.Drawing.Size(110, 21);
             this.GeneroComboBox.TabIndex = 4;
             this.GeneroComboBox.SelectedIndexChanged += new System.EventHandler(this.SelectedIndexChanged_GeneroCategoria);
             this.GeneroComboBox.Click += new System.EventHandler(this.GeneroComboBox_Click);
@@ -271,7 +271,7 @@
             // btnConfirmar
             // 
             this.btnConfirmar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConfirmar.Location = new System.Drawing.Point(366, 43);
+            this.btnConfirmar.Location = new System.Drawing.Point(366, 30);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(95, 38);
             this.btnConfirmar.TabIndex = 6;
@@ -294,9 +294,9 @@
             this.groupBox3.Controls.Add(this.dateTimeLocacao);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Location = new System.Drawing.Point(12, 339);
+            this.groupBox3.Location = new System.Drawing.Point(12, 352);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(644, 171);
+            this.groupBox3.Size = new System.Drawing.Size(644, 158);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             // 
@@ -306,7 +306,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.label12.Location = new System.Drawing.Point(479, 43);
+            this.label12.Location = new System.Drawing.Point(479, 30);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(45, 42);
             this.label12.TabIndex = 10;
@@ -320,7 +320,7 @@
             this.PIX.AutoSize = true;
             this.PIX.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PIX.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.PIX.Location = new System.Drawing.Point(530, 47);
+            this.PIX.Location = new System.Drawing.Point(530, 34);
             this.PIX.Name = "PIX";
             this.PIX.Size = new System.Drawing.Size(0, 38);
             this.PIX.TabIndex = 9;
@@ -328,12 +328,11 @@
             // 
             // txtTotalDeDias
             // 
-            this.txtTotalDeDias.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTotalDeDias.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtTotalDeDias.BackColor = System.Drawing.SystemColors.Menu;
             this.txtTotalDeDias.Enabled = false;
             this.txtTotalDeDias.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalDeDias.Location = new System.Drawing.Point(9, 123);
+            this.txtTotalDeDias.Location = new System.Drawing.Point(9, 110);
             this.txtTotalDeDias.Name = "txtTotalDeDias";
             this.txtTotalDeDias.Size = new System.Drawing.Size(66, 30);
             this.txtTotalDeDias.TabIndex = 7;
@@ -344,7 +343,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 107);
+            this.label8.Location = new System.Drawing.Point(6, 94);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(69, 13);
             this.label8.TabIndex = 5;
@@ -358,7 +357,7 @@
             this.btnAlugar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAlugar.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAlugar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAlugar.Location = new System.Drawing.Point(366, 114);
+            this.btnAlugar.Location = new System.Drawing.Point(366, 101);
             this.btnAlugar.Margin = new System.Windows.Forms.Padding(1);
             this.btnAlugar.Name = "btnAlugar";
             this.btnAlugar.Size = new System.Drawing.Size(274, 53);
@@ -369,21 +368,19 @@
             // 
             // dateTimeDevolucao
             // 
-            this.dateTimeDevolucao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimeDevolucao.Location = new System.Drawing.Point(9, 78);
+            this.dateTimeDevolucao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.dateTimeDevolucao.Location = new System.Drawing.Point(9, 65);
             this.dateTimeDevolucao.Name = "dateTimeDevolucao";
-            this.dateTimeDevolucao.Size = new System.Drawing.Size(223, 21);
+            this.dateTimeDevolucao.Size = new System.Drawing.Size(234, 21);
             this.dateTimeDevolucao.TabIndex = 3;
             this.dateTimeDevolucao.ValueChanged += new System.EventHandler(this.dateTimeLocacaoDevolucao_ValueChanged);
             // 
             // dateTimeLocacao
             // 
-            this.dateTimeLocacao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimeLocacao.Location = new System.Drawing.Point(9, 33);
+            this.dateTimeLocacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.dateTimeLocacao.Location = new System.Drawing.Point(9, 20);
             this.dateTimeLocacao.Name = "dateTimeLocacao";
-            this.dateTimeLocacao.Size = new System.Drawing.Size(223, 21);
+            this.dateTimeLocacao.Size = new System.Drawing.Size(234, 21);
             this.dateTimeLocacao.TabIndex = 2;
             this.dateTimeLocacao.ValueChanged += new System.EventHandler(this.dateTimeLocacaoDevolucao_ValueChanged);
             // 
@@ -392,7 +389,7 @@
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 62);
+            this.label7.Location = new System.Drawing.Point(6, 49);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(98, 13);
             this.label7.TabIndex = 1;
@@ -403,7 +400,7 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 17);
+            this.label6.Location = new System.Drawing.Point(6, 4);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 13);
             this.label6.TabIndex = 0;
@@ -413,9 +410,9 @@
             // 
             this.pictureBoxBanner.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBoxBanner.Location = new System.Drawing.Point(440, 12);
+            this.pictureBoxBanner.Location = new System.Drawing.Point(379, 12);
             this.pictureBoxBanner.Name = "pictureBoxBanner";
-            this.pictureBoxBanner.Size = new System.Drawing.Size(216, 321);
+            this.pictureBoxBanner.Size = new System.Drawing.Size(277, 334);
             this.pictureBoxBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxBanner.TabIndex = 7;
             this.pictureBoxBanner.TabStop = false;
@@ -431,6 +428,7 @@
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(684, 561);
             this.Name = "FrmTelaLocacao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Locar Filme";
