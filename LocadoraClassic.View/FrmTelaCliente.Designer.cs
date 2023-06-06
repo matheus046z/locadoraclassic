@@ -100,7 +100,7 @@
             // 
             // txtNome
             // 
-            this.txtNome.BackColor = System.Drawing.Color.Silver;
+            this.txtNome.BackColor = System.Drawing.Color.LightGray;
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNome.Location = new System.Drawing.Point(31, 40);
             this.txtNome.Name = "txtNome";
@@ -109,7 +109,7 @@
             // 
             // txtEndereco
             // 
-            this.txtEndereco.BackColor = System.Drawing.Color.Silver;
+            this.txtEndereco.BackColor = System.Drawing.Color.LightGray;
             this.txtEndereco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEndereco.Location = new System.Drawing.Point(31, 78);
             this.txtEndereco.Name = "txtEndereco";
@@ -118,7 +118,7 @@
             // 
             // txtRG
             // 
-            this.txtRG.BackColor = System.Drawing.Color.Silver;
+            this.txtRG.BackColor = System.Drawing.Color.LightGray;
             this.txtRG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRG.Location = new System.Drawing.Point(31, 204);
             this.txtRG.Name = "txtRG";
@@ -127,7 +127,7 @@
             // 
             // mtxtCPF
             // 
-            this.mtxtCPF.BackColor = System.Drawing.Color.Silver;
+            this.mtxtCPF.BackColor = System.Drawing.Color.LightGray;
             this.mtxtCPF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.mtxtCPF.Location = new System.Drawing.Point(31, 166);
             this.mtxtCPF.Mask = "000.000.000-00";
@@ -137,7 +137,7 @@
             // 
             // mtxtTelefone
             // 
-            this.mtxtTelefone.BackColor = System.Drawing.Color.Silver;
+            this.mtxtTelefone.BackColor = System.Drawing.Color.LightGray;
             this.mtxtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.mtxtTelefone.Location = new System.Drawing.Point(31, 123);
             this.mtxtTelefone.Mask = "(00) 00000-0000";

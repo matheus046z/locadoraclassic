@@ -196,16 +196,6 @@ namespace LocadoraClassic.View
                 MessageBox.Show("Digite o CPF de cliente cadastrado para alugar um filme!");
             }
         }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 

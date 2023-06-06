@@ -58,7 +58,7 @@
             // 
             // txtNomeGenero
             // 
-            this.txtNomeGenero.BackColor = System.Drawing.Color.Silver;
+            this.txtNomeGenero.BackColor = System.Drawing.Color.LightGray;
             this.txtNomeGenero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNomeGenero.Location = new System.Drawing.Point(42, 52);
             this.txtNomeGenero.Name = "txtNomeGenero";
@@ -145,7 +145,7 @@
             // txtNomeNovo
             // 
             this.txtNomeNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtNomeNovo.BackColor = System.Drawing.Color.Silver;
+            this.txtNomeNovo.BackColor = System.Drawing.Color.LightGray;
             this.txtNomeNovo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNomeNovo.Location = new System.Drawing.Point(42, 460);
             this.txtNomeNovo.Name = "txtNomeNovo";
@@ -167,7 +167,7 @@
             // txtNomeSelecionado
             // 
             this.txtNomeSelecionado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtNomeSelecionado.BackColor = System.Drawing.Color.Silver;
+            this.txtNomeSelecionado.BackColor = System.Drawing.Color.LightGray;
             this.txtNomeSelecionado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNomeSelecionado.Enabled = false;
             this.txtNomeSelecionado.Location = new System.Drawing.Point(42, 417);

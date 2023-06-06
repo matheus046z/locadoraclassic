@@ -125,7 +125,7 @@
             // 
             this.CategoriaComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.CategoriaComboBox.BackColor = System.Drawing.Color.Silver;
+            this.CategoriaComboBox.BackColor = System.Drawing.Color.LightGray;
             this.CategoriaComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CategoriaComboBox.FormattingEnabled = true;
             this.CategoriaComboBox.Location = new System.Drawing.Point(27, 46);
@@ -138,7 +138,7 @@
             // 
             this.GeneroComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.GeneroComboBox.BackColor = System.Drawing.Color.Silver;
+            this.GeneroComboBox.BackColor = System.Drawing.Color.LightGray;
             this.GeneroComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GeneroComboBox.FormattingEnabled = true;
             this.GeneroComboBox.Location = new System.Drawing.Point(27, 86);
@@ -151,7 +151,7 @@
             // 
             this.txtNomeFilme.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNomeFilme.BackColor = System.Drawing.Color.Silver;
+            this.txtNomeFilme.BackColor = System.Drawing.Color.LightGray;
             this.txtNomeFilme.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNomeFilme.Location = new System.Drawing.Point(27, 139);
             this.txtNomeFilme.Name = "txtNomeFilme";
@@ -162,7 +162,7 @@
             // 
             this.txtSinopse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSinopse.BackColor = System.Drawing.Color.Silver;
+            this.txtSinopse.BackColor = System.Drawing.Color.LightGray;
             this.txtSinopse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSinopse.Location = new System.Drawing.Point(27, 234);
             this.txtSinopse.Multiline = true;
@@ -187,7 +187,7 @@
             // 
             this.mtxtDuracao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.mtxtDuracao.BackColor = System.Drawing.Color.Silver;
+            this.mtxtDuracao.BackColor = System.Drawing.Color.LightGray;
             this.mtxtDuracao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.mtxtDuracao.Location = new System.Drawing.Point(27, 185);
             this.mtxtDuracao.Mask = "00:00";
@@ -247,7 +247,7 @@
             // 
             this.txtURL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtURL.BackColor = System.Drawing.Color.Silver;
+            this.txtURL.BackColor = System.Drawing.Color.LightGray;
             this.txtURL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtURL.Location = new System.Drawing.Point(27, 385);
             this.txtURL.Name = "txtURL";
@@ -270,7 +270,8 @@
             // txtSelecao
             // 
             this.txtSelecao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSelecao.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtSelecao.BackColor = System.Drawing.Color.LightGray;
+            this.txtSelecao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSelecao.Enabled = false;
             this.txtSelecao.Location = new System.Drawing.Point(508, 386);
             this.txtSelecao.Name = "txtSelecao";

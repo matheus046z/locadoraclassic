@@ -41,12 +41,17 @@
             // 
             // btnConectar
             // 
+            this.btnConectar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnConectar.FlatAppearance.BorderSize = 0;
+            this.btnConectar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.btnConectar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConectar.ForeColor = System.Drawing.Color.Silver;
             this.btnConectar.Location = new System.Drawing.Point(62, 201);
             this.btnConectar.Name = "btnConectar";
             this.btnConectar.Size = new System.Drawing.Size(147, 23);
             this.btnConectar.TabIndex = 5;
             this.btnConectar.Text = "Conectar";
-            this.btnConectar.UseVisualStyleBackColor = true;
+            this.btnConectar.UseVisualStyleBackColor = false;
             this.btnConectar.Click += new System.EventHandler(this.btnConectar_Click);
             // 
             // txtServer
@@ -57,15 +62,18 @@
             "177.235.71.5"});
             this.txtServer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtServer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtServer.BackColor = System.Drawing.Color.LightGray;
             this.txtServer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtServer.Location = new System.Drawing.Point(62, 49);
             this.txtServer.Name = "txtServer";
             this.txtServer.Size = new System.Drawing.Size(147, 20);
             this.txtServer.TabIndex = 1;
+            this.txtServer.Text = "192.168.0.49";
             // 
             // Server
             // 
             this.Server.AutoSize = true;
+            this.Server.ForeColor = System.Drawing.Color.LightGray;
             this.Server.Location = new System.Drawing.Point(59, 33);
             this.Server.Name = "Server";
             this.Server.Size = new System.Drawing.Size(38, 13);
@@ -75,6 +83,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.LightGray;
             this.label1.Location = new System.Drawing.Point(59, 72);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
@@ -88,14 +97,18 @@
             "Matheus"});
             this.txtUserId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtUserId.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtUserId.BackColor = System.Drawing.Color.LightGray;
+            this.txtUserId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUserId.Location = new System.Drawing.Point(62, 88);
             this.txtUserId.Name = "txtUserId";
             this.txtUserId.Size = new System.Drawing.Size(144, 20);
             this.txtUserId.TabIndex = 2;
+            this.txtUserId.Text = "Matheus";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.LightGray;
             this.label2.Location = new System.Drawing.Point(59, 150);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 13);
@@ -109,14 +122,18 @@
             "locadoraclassic"});
             this.txtInitialCatalog.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.txtInitialCatalog.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtInitialCatalog.BackColor = System.Drawing.Color.LightGray;
+            this.txtInitialCatalog.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtInitialCatalog.Location = new System.Drawing.Point(62, 166);
             this.txtInitialCatalog.Name = "txtInitialCatalog";
             this.txtInitialCatalog.Size = new System.Drawing.Size(144, 20);
             this.txtInitialCatalog.TabIndex = 4;
+            this.txtInitialCatalog.Text = "locadoraclassic";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.LightGray;
             this.label3.Location = new System.Drawing.Point(59, 111);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
@@ -125,6 +142,8 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.BackColor = System.Drawing.Color.LightGray;
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPassword.Location = new System.Drawing.Point(62, 127);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
@@ -136,6 +155,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(273, 264);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label3);
